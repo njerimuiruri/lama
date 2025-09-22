@@ -62,9 +62,14 @@ const LamaNavbar = () => {
       href: "/dashboard",
       subItems: [
         {
+          name: "Test",
+          href: "/dashboard/test",
+        },
+        {
           name: "Interactive Indicators & Visualizations",
           href: "/dashboard/indicators",
         },
+
         { name: "Impact Stories", href: "/dashboard/impact-stories" },
       ],
     },
