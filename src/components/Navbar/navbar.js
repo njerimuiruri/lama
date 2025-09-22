@@ -139,13 +139,11 @@ const LamaNavbar = () => {
     <nav className="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 min-w-0">
-          {/* Logo Section */}
           <Link href="/" className="flex items-center space-x-3 flex-shrink-0">
-            {/* Replace this Image component with your actual logo */}
             <div className="w-10 h-10 relative">
               <Image
-                src="/logo.png" // Replace with your actual logo path
-                alt="LAMA Platform Logo"
+                src="/logo.png"
+                alt="LAMA  Logo"
                 width={40}
                 height={40}
                 className="rounded-lg object-contain"
@@ -158,7 +156,6 @@ const LamaNavbar = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:block flex-1 max-w-none">
             <div className="flex space-x-1 justify-center xl:justify-end">
               {menuItems.map((item) => (
@@ -182,7 +179,6 @@ const LamaNavbar = () => {
                         <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
                       </button>
 
-                      {/* Optimized dropdown with smaller width and better spacing */}
                       <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                         <div className="p-3">
                           <div className="space-y-1">
@@ -228,7 +224,6 @@ const LamaNavbar = () => {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="lg:hidden flex-shrink-0">
             <Button
               variant="ghost"
@@ -246,7 +241,6 @@ const LamaNavbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
           <div className="max-w-7xl mx-auto px-4 py-4 space-y-2">
