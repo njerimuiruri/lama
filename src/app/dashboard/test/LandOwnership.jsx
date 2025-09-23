@@ -376,8 +376,11 @@ const LandOwnership = () => {
                                                                 if (value < 20) return null;
 
                                                                 const originalDataPoint = currentData.find(item =>
-                                                                    item.category === payload.category && item.type === type
+                                                                    payload?.category && item.category === payload.category && item.type === type
                                                                 );
+
+                                                                if (!originalDataPoint) return null;
+
 
                                                                 if (!originalDataPoint) return null;
 
@@ -430,10 +433,12 @@ const LandOwnership = () => {
                                                                 if (value < 20) return null;
 
                                                                 const originalDataPoint = currentData.find(item =>
-                                                                    item.type === payload.type && item.category === category
+                                                                    payload?.category && item.category === payload.category && item.type === type
                                                                 );
 
                                                                 if (!originalDataPoint) return null;
+
+
 
                                                                 return (
                                                                     <text
