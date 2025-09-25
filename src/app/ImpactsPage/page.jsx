@@ -173,56 +173,7 @@ const ImpactsPage = () => {
 
 
 
-                {/* Related Videos */}
-                <section className="py-20 bg-white">
-                    <div className="container mx-auto px-6">
-                        <div className="max-w-6xl mx-auto">
-                            <div className="flex items-center justify-between mb-12">
-                                <div>
-                                    <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                                        More <span className="text-green-600">Impact Stories</span>
-                                    </h2>
-                                    <p className="text-xl text-gray-600">
-                                        Discover additional stories of transformation and resilience
-                                    </p>
-                                </div>
-                                <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-semibold transition-colors duration-300 inline-flex items-center gap-2">
-                                    Watch More Videos
-                                    <ArrowRight className="w-4 h-4" />
-                                </button>
-                            </div>
 
-                            <div className="grid md:grid-cols-3 gap-8">
-                                {relatedVideos.map((video, index) => (
-                                    <div key={index} className="group cursor-pointer">
-                                        <div className="relative overflow-hidden rounded-xl shadow-lg mb-4">
-                                            <img
-                                                src={video.thumbnail}
-                                                alt={video.title}
-                                                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                                            />
-                                            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300"></div>
-                                            <div className="absolute inset-0 flex items-center justify-center">
-                                                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                    <Play className="w-5 h-5 text-green-600 ml-0.5" fill="currentColor" />
-                                                </div>
-                                            </div>
-
-                                            <div className="absolute bottom-2 right-2 bg-black/70 text-white px-2 py-1 rounded text-sm">
-                                                {video.duration}
-                                            </div>
-                                        </div>
-
-                                        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors duration-300">
-                                            {video.title}
-                                        </h3>
-                                        <p className="text-gray-600 text-sm">{video.views} views</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section>
             </div>
         </div>
     );
