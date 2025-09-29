@@ -6,6 +6,7 @@ import {
     Building, Book, Database, Settings, ChevronLeft, ChevronRight, Quote
 } from 'lucide-react';
 import LamaNavbar from '@/components/Navbar/navbar';
+import LamaFooter from '@/components/Footer/footer';
 
 const AboutPage = () => {
     const [currentAdvisor, setCurrentAdvisor] = useState(0);
@@ -527,11 +528,9 @@ const AboutPage = () => {
                             </div>
                         </div>
                     </section>
-
-
-
                 </div>
             </div>
+            <LamaFooter />
 
         </>
     );

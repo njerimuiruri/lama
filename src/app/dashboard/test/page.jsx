@@ -4,6 +4,12 @@ import { BarChart, Users, Leaf, Shield, Layers, Eye, CloudRain } from 'lucide-re
 import LamaNavbar from '@/components/Navbar/navbar';
 import LandOwnership from './LandOwnership';
 import FarmingSystems from './FarmingSystems';
+import prioritysector from './prioritysector';
+
+import observableimpacts from './observableimpacts';
+import climateinfor from './climateinfor';
+
+import LamaFooter from '@/components/Footer/footer';
 
 const LandDashboard = () => {
     const [activeTab, setActiveTab] = useState('land-ownership');
@@ -37,19 +43,20 @@ const LandDashboard = () => {
             id: 'priority-sectors',
             name: 'Priority Sectors',
             icon: BarChart,
-            component: () => <div className="p-8 text-center text-gray-500">Priority Sectors component coming soon...</div>
+            component: prioritysector,
         },
         {
             id: 'observable-impacts',
             name: 'Observable CC Impacts',
             icon: Eye,
-            component: () => <div className="p-8 text-center text-gray-500">Observable CC Impacts component coming soon...</div>
+            component: observableimpacts,
         },
         {
             id: 'climate-info',
             name: 'Access Climate Info',
             icon: CloudRain,
-            component: () => <div className="p-8 text-center text-gray-500">Access Climate Info component coming soon...</div>
+            component: climateinfor,
+
         }
     ];
 
@@ -59,14 +66,12 @@ const LandDashboard = () => {
         <>
             <LamaNavbar />
             <div className="min-h-screen bg-white">
-                {/* Background Elements */}
                 <div className="absolute inset-0 overflow-hidden">
                     <div className="absolute top-32 right-20 w-64 h-64 bg-gradient-to-br from-green-50 to-emerald-50 rounded-full blur-3xl opacity-40"></div>
                     <div className="absolute bottom-32 left-20 w-72 h-72 bg-gradient-to-tr from-blue-50 to-sky-50 rounded-full blur-3xl opacity-30"></div>
                 </div>
 
                 <div className="relative z-10">
-                    {/* Hero Section */}
                     <section className="py-16 bg-gradient-to-br from-green-50 to-emerald-50">
                         <div className="container mx-auto px-6">
                             <div className="max-w-6xl mx-auto text-center">
@@ -117,6 +122,7 @@ const LandDashboard = () => {
                     </section>
                 </div>
             </div>
+            <LamaFooter />
         </>
     );
 };
