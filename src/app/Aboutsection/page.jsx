@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { Users, Target, Globe, BarChart3, Heart, Lightbulb, ArrowRight, CheckCircle } from 'lucide-react';
+import Link from 'next/link';
 
 const AboutSection = () => {
     const components = [
@@ -100,10 +101,15 @@ const AboutSection = () => {
                                         </p>
                                     </div>
 
-                                    <button className="bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold transition-all duration-300 inline-flex items-center gap-2 text-sm sm:text-base shadow-md hover:shadow-lg transform hover:scale-105">
-                                        Learn More
-                                        <ArrowRight className="w-4 h-4" />
-                                    </button>
+
+
+
+                                    <Link href="/about" className="group">
+                                        <button className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-3">
+                                            Learn More
+                                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import LamaNavbar from '@/components/Navbar/navbar';
 import LamaFooter from '@/components/Footer/footer';
+import Link from 'next/link';
 
 const AboutPage = () => {
     const [currentAdvisor, setCurrentAdvisor] = useState(0);
@@ -221,17 +222,17 @@ const AboutPage = () => {
                                         </div>
 
                                         <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-                                            <button className="bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-105 text-sm sm:text-base">
-                                                Explore Dashboard
-                                                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-                                            </button>
-                                            <button className="bg-white border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base">
-                                                Learn More
-                                            </button>
+
+                                            <Link href="/test" className="group">
+                                                <button className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-3">
+                                                    Explore Dashboard
+                                                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+                                                </button>
+                                            </Link>
+
                                         </div>
                                     </div>
 
-                                    {/* Image Section */}
                                     <div className="relative order-1 lg:order-2">
                                         <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-emerald-400/20 rounded-2xl sm:rounded-3xl transform rotate-2 sm:rotate-3"></div>
                                         <div className="relative bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-4 shadow-2xl">

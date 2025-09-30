@@ -154,7 +154,7 @@ const LAMAHeroSection = () => {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                            <Link href="/learn-more" className="group">
+                            <Link href="/about" className="group">
                                 <button className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-3">
                                     Learn More
                                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
