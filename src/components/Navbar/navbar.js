@@ -48,17 +48,17 @@ const LamaNavbar = () => {
       href: "/about",
     },
     {
-      name: "Dashboard",
+      name: "Components",
       icon: <Target className="w-4 h-4" />,
       href: "/dashboard",
       subItems: [
-        {
-          name: "Test",
-          href: "/dashboard/test",
-        },
+        // {
+        //   name: "Test",
+        //   href: "/dashboard/test",
+        // },
         {
           name: "Interactive dashboard",
-          href: "/dashboard/indicators",
+          href: "/dashboard/dashboard",
         },
         {
           name: "LLA Interventions Database",
@@ -70,6 +70,7 @@ const LamaNavbar = () => {
           href: "/resources/tools-frameworks",
           description: "Guides, documents, data",
         },
+        { name: "Stakeholder Directory", href: "/stakeholders/directory" },
         { name: "Impact Stories", href: "/dashboard/impact-stories" },
       ],
     },
