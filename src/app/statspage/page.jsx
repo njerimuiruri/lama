@@ -15,7 +15,7 @@ const StatsPage = () => {
             icon: TrendingUp,
             number: "50%",
             label: "Rely on Climate-Sensitive Agriculture",
-            description: "Of Africa&apos;s vulnerable population depends on farming for their primary livelihood", color: "from-green-500 to-green-600"
+            description: "Of Africa&apos;s vulnerable population depends on farming for their primary livelihood",
         },
         {
             icon: DollarSign,
