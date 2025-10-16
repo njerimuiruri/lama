@@ -65,7 +65,7 @@ const LamaNavbar = () => {
         // },
         {
           name: "Interactive dashboard",
-          href: "/dashboard/dashboard",
+          href: "/dashboard/sitedashboard",
         },
         {
           name: "LLA Interventions Database",
