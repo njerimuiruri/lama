@@ -13,7 +13,7 @@ export default function Home() {
       <LamaNavbar />
       <HeroSection />
       <AboutSection />
-      <StatsPage />
+      {/* <StatsPage /> */}
       <ImpactsPage />
       <BlogsPage />
       <LamaFooter />
