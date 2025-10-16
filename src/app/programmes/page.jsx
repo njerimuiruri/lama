@@ -105,33 +105,7 @@ const ProgramPage = () => {
                                         </div>
                                     </div>
 
-                                    {/* Key Highlights */}
-                                    <div className="bg-gray-50 p-8 border-t border-gray-200">
-                                        <h3 className="text-xl font-bold text-gray-900 mb-4">Program Highlights</h3>
-                                        <div className="grid md:grid-cols-3 gap-6">
-                                            <div className="flex items-start gap-3">
-                                                <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
-                                                <div>
-                                                    <p className="font-semibold text-gray-900">Day 1</p>
-                                                    <p className="text-sm text-gray-600">Marathon, Tree Planting & Hackathon</p>
-                                                </div>
-                                            </div>
-                                            <div className="flex items-start gap-3">
-                                                <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
-                                                <div>
-                                                    <p className="font-semibold text-gray-900">Day 2</p>
-                                                    <p className="text-sm text-gray-600">Official Opening & Breakaway Sessions</p>
-                                                </div>
-                                            </div>
-                                            <div className="flex items-start gap-3">
-                                                <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
-                                                <div>
-                                                    <p className="font-semibold text-gray-900">Day 3</p>
-                                                    <p className="text-sm text-gray-600">Closing Ceremony & Exhibitions</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
 
                                 {/* Download Button */}

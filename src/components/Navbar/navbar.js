@@ -54,33 +54,33 @@ const LamaNavbar = () => {
       href: "/programmes",
     },
 
-    {
-      name: "Components",
-      icon: <Target className="w-4 h-4" />,
-      href: "/dashboard",
-      subItems: [
-        // {
-        //   name: "Test",
-        //   href: "/dashboard/test",
-        // },
-        {
-          name: "Interactive dashboard",
-          href: "/dashboard/dashboard",
-        },
-        {
-          name: "LLA Interventions Database",
-          href: "/resources/interventions-database",
-          description: "Projects & lessons learned",
-        },
-        {
-          name: "Tools & Frameworks",
-          href: "/resources/tools-frameworks",
-          description: "Guides, documents, data",
-        },
-        { name: "Stakeholder Directory", href: "/stakeholders/directory" },
-        { name: "Impact Stories", href: "/dashboard/impact-stories" },
-      ],
-    },
+    // {
+    //   name: "Components",
+    //   icon: <Target className="w-4 h-4" />,
+    //   href: "/dashboard",
+    //   subItems: [
+    //     {
+    //       name: "Test",
+    //       href: "/dashboard/test",
+    //     },
+    //     {
+    //       name: "Interactive dashboard",
+    //       href: "/dashboard/dashboard",
+    //     },
+    //     {
+    //       name: "LLA Interventions Database",
+    //       href: "/resources/interventions-database",
+    //       description: "Projects & lessons learned",
+    //     },
+    //     {
+    //       name: "Tools & Frameworks",
+    //       href: "/resources/tools-frameworks",
+    //       description: "Guides, documents, data",
+    //     },
+    //     { name: "Stakeholder Directory", href: "/stakeholders/directory" },
+    //     { name: "Impact Stories", href: "/dashboard/impact-stories" },
+    //   ],
+    // },
     // {
     //   name: "Resources",
     //   icon: <Database className="w-4 h-4" />,
