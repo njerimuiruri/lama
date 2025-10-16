@@ -83,7 +83,7 @@ const StatsPage = () => {
                             </h1>
 
                             <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed font-light max-w-3xl mx-auto">
-                                Critical numbers that highlight the urgent need for locally led adaptation across Africa and the scale of LAMA's impact
+                                Critical numbers that highlight the urgent need for locally led adaptation across Africa and the scale of LAMA&apos;s impact
                             </p>
                         </div>
                     </div>
