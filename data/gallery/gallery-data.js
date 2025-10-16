@@ -1,3 +1,6 @@
+// Gallery data configuration
+// Add your actual images to public/assets/images/ and videos to public/assets/videos/
+
 export const pictures = [
   {
     id: 1,
@@ -78,7 +81,7 @@ export const videos = [
   {
     id: 1,
     thumbnail: "/assets/videos/thumbnails/video-1-thumb.jpg",
-    videoUrl: "/assets/videos/video-1.mp4",
+    youtubeId: "dQw4w9WgXcQ", // Replace with your YouTube video ID
     title: "Project Overview",
     description: "Introduction to our latest project",
     duration: "3:45",
@@ -86,7 +89,7 @@ export const videos = [
   {
     id: 2,
     thumbnail: "/assets/videos/thumbnails/video-2-thumb.jpg",
-    videoUrl: "/assets/videos/video-2.mp4",
+    youtubeId: "dQw4w9WgXcQ", // Replace with your YouTube video ID
     title: "Behind the Scenes",
     description: "A look at our work process",
     duration: "5:20",
@@ -94,7 +97,7 @@ export const videos = [
   {
     id: 3,
     thumbnail: "/assets/videos/thumbnails/video-3-thumb.jpg",
-    videoUrl: "/assets/videos/video-3.mp4",
+    youtubeId: "dQw4w9WgXcQ", // Replace with your YouTube video ID
     title: "Team Highlights",
     description: "Meet our amazing team",
     duration: "2:15",
@@ -102,7 +105,7 @@ export const videos = [
   {
     id: 4,
     thumbnail: "/assets/videos/thumbnails/video-4-thumb.jpg",
-    videoUrl: "/assets/videos/video-4.mp4",
+    youtubeId: "dQw4w9WgXcQ", // Replace with your YouTube video ID
     title: "Success Stories",
     description: "Client testimonials and results",
     duration: "4:30",
@@ -110,7 +113,7 @@ export const videos = [
   {
     id: 5,
     thumbnail: "/assets/videos/thumbnails/video-5-thumb.jpg",
-    videoUrl: "/assets/videos/video-5.mp4",
+    youtubeId: "dQw4w9WgXcQ", // Replace with your YouTube video ID
     title: "Innovation Showcase",
     description: "Our latest innovations",
     duration: "6:10",
@@ -118,7 +121,7 @@ export const videos = [
   {
     id: 6,
     thumbnail: "/assets/videos/thumbnails/video-6-thumb.jpg",
-    videoUrl: "/assets/videos/video-6.mp4",
+    youtubeId: "dQw4w9WgXcQ", // Replace with your YouTube video ID
     title: "Event Coverage",
     description: "Highlights from recent events",
     duration: "3:55",
@@ -126,7 +129,7 @@ export const videos = [
   {
     id: 7,
     thumbnail: "/assets/videos/thumbnails/video-7-thumb.jpg",
-    videoUrl: "/assets/videos/video-7.mp4",
+    youtubeId: "dQw4w9WgXcQ", // Replace with your YouTube video ID
     title: "Product Demo",
     description: "See our products in action",
     duration: "4:45",
@@ -134,9 +137,10 @@ export const videos = [
   {
     id: 8,
     thumbnail: "/assets/videos/thumbnails/video-8-thumb.jpg",
-    videoUrl: "/assets/videos/video-8.mp4",
+    youtubeId: "dQw4w9WgXcQ", // Replace with your YouTube video ID
     title: "Tutorial Series",
     description: "Learn how to use our platform",
     duration: "7:20",
   },
+  // Add more videos as needed
 ];

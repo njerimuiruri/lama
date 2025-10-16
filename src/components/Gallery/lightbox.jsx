@@ -1,48 +1,41 @@
-"use client";
-import { useEffect } from "react";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+"use client"
+import { useEffect } from "react"
+import { X, ChevronLeft, ChevronRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
-const Lightbox = ({
-  isOpen,
-  onClose,
-  items,
-  currentIndex,
-  onNavigate,
-  type = "image",
-}) => {
+const Lightbox = ({ isOpen, onClose, items, currentIndex, onNavigate, type = "image" }) => {
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (!isOpen) return;
+      if (!isOpen) return
 
       if (e.key === "Escape") {
-        onClose();
+        onClose()
       } else if (e.key === "ArrowLeft") {
-        onNavigate("prev");
+        onNavigate("prev")
       } else if (e.key === "ArrowRight") {
-        onNavigate("next");
+        onNavigate("next")
       }
-    };
+    }
 
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, onClose, onNavigate]);
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [isOpen, onClose, onNavigate])
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = "hidden"
     } else {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "unset"
     }
 
     return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isOpen]);
+      document.body.style.overflow = "unset"
+    }
+  }, [isOpen])
 
-  if (!isOpen || !items[currentIndex]) return null;
+  if (!isOpen || !items[currentIndex]) return null
 
-  const currentItem = items[currentIndex];
+  const currentItem = items[currentIndex]
 
   return (
     <div className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center">
@@ -86,22 +79,21 @@ const Lightbox = ({
               className="max-w-full max-h-[75vh] object-contain rounded-lg"
             />
           ) : (
-            <video
-              src={currentItem.url}
-              controls
-              autoPlay
-              className="max-w-full max-h-[75vh] rounded-lg"
-            >
-              Your browser does not support the video tag.
-            </video>
+            <div className="w-full max-w-5xl aspect-video">
+              <iframe
+                src={`https://www.youtube.com/embed/${currentItem.youtubeId}?autoplay=1`}
+                title={currentItem.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full rounded-lg"
+              ></iframe>
+            </div>
           )}
         </div>
 
         {/* Info section */}
         <div className="mt-6 text-center max-w-3xl">
-          <h2 className="text-2xl font-bold text-white mb-2">
-            {currentItem.title}
-          </h2>
+          <h2 className="text-2xl font-bold text-white mb-2">{currentItem.title}</h2>
           <p className="text-gray-300 mb-2">{currentItem.description}</p>
           <p className="text-gray-400 text-sm">
             {currentIndex + 1} / {items.length}
@@ -112,7 +104,7 @@ const Lightbox = ({
       {/* Click outside to close */}
       <div className="absolute inset-0 -z-10" onClick={onClose}></div>
     </div>
-  );
-};
+  )
+}
 
-export default Lightbox;
+export default Lightbox

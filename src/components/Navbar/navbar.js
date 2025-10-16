@@ -16,6 +16,7 @@ import {
   Mail,
   Home,
   Info,
+  GraduationCap,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -47,6 +48,12 @@ const LamaNavbar = () => {
       icon: <Info className="w-4 h-4" />,
       href: "/about",
     },
+    {
+      name: "Program",
+      icon: <GraduationCap className="w-4 h-4" />,
+      href: "/programmes",
+    },
+
     {
       name: "Components",
       icon: <Target className="w-4 h-4" />,
