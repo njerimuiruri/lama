@@ -1,98 +1,44 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import {
-    Users, Target, Globe, BarChart3, Heart, Lightbulb, ArrowRight, CheckCircle,
-    Shield, Layers, Eye, CloudRain, Leaf, TrendingUp, MapPin, Award,
-    Building, Book, Database, Settings, ChevronLeft, ChevronRight, Quote
+    Shield, TrendingUp, Eye, Layers, Building, Book, Globe,
+    CheckCircle, ArrowRight, Award, ChevronLeft, ChevronRight, Quote
 } from 'lucide-react';
 import LamaNavbar from '@/components/Navbar/navbar';
 import LamaFooter from '@/components/Footer/footer';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const AboutPage = () => {
     const [currentAdvisor, setCurrentAdvisor] = useState(0);
 
     const advisors = [
         {
-            name: "Dr. Amina Hassan",
-            role: "African Group of Negotiators Representative",
-            background: "Climate Policy & International Relations",
-            bio: "Leading expert in climate negotiations with over 15 years of experience representing African interests in international climate forums.",
-            image:
-                "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+            name: "Ms. Omari Kulthoum",
+            role: "Coordinator for the African Group of Negotiations (AGN)",
+            background: "Climate Adaptation & Drought Governance",
+            bio: "Coordinator for the African Group of Negotiations (AGN) on the Africa Adaptation Initiative. She's also a PhD candidate at the University of Cape Town with the African Climate Development Initiative studying adaptation governance, with a particular focus on drought governance in Botswana. She has extensive experience in climate adaptation, and in 2018, she joined the Adaptation Committee (AC).",
+            image: "/images/omari.png",
         },
         {
-            name: "Prof. Kwame Asante",
-            role: "Research & Academia Representative",
-            background: "Climate Science & Adaptation Research",
-            bio: "Renowned climate researcher focusing on adaptation strategies for vulnerable communities across Sub-Saharan Africa.",
-            image:
-                "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+            name: "Professor Anthony Nyong",
+            role: "Director of Climate Change and Green Growth",
+            background: "Climate Change & Green Growth at AfDB",
+            bio: "Director of Climate Change and Green Growth at the African Development Bank (AfDB). Mr. Nyong has about 30 years of experience in environmental and natural resources management, renewable energy and green growth. He was a Coordinating Lead Author for the IPCC Fourth Assessment Report and is named among the top 20 of the 100 most Influential People in Climate Policy by 2019 by Apolitical",
+            image: "/images/antony.png",
         },
         {
-            name: "Sarah Mwangi",
-            role: "Private Sector Representative",
-            background: "Sustainable Finance & Climate Investments",
-            bio: "Finance executive specializing in climate adaptation investments and sustainable development funding mechanisms.",
-            image:
-                "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+            name: "Charles Mwangi",
+            role: "Head of Programs at PACJA",
+            background: "Climate Change & Community Development",
+            bio: "Charles Mwangi is a seasoned Climate Change Specialist with over 17 years of experience working across local, national, and international levels. Currently, as the Head of Programs at the Pan African Climate Justice Alliance (PACJA), he plays a pivotal role in designing and executing climate change and community-based development initiatives across Africa. He oversees the implementation of 11 such initiatives across all 51 African countries.",
+            image: "/images/charlesmwangi.png",
         },
         {
-            name: "Hon. Joseph Ochieng",
-            role: "Government Representative",
-            background: "Environmental Policy & Governance",
-            bio: "Senior government official with extensive experience in environmental policy development and climate adaptation planning.",
-            image:
-                "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        },
-        {
-            name: "Fatima Al-Rashid",
-            role: "Local Communities Representative",
-            background: "Community Development & Grassroots Advocacy",
-            bio: "Community leader advocating for locally-led adaptation initiatives and indigenous knowledge integration in climate solutions.",
-            image:
-                "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        },
-        {
-            name: "Dr. Emmanuel Tetteh",
-            role: "Youth & Innovation Representative",
-            background: "Climate Technology & Digital Solutions",
-            bio: "Young innovator developing cutting-edge climate technologies and digital platforms for community-based adaptation monitoring.",
-            image:
-                "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        },
-        {
-            name: "Dr. Grace Nyong",
-            role: "Gender & Social Inclusion Expert",
-            background: "Women's Rights & Climate Justice",
-            bio: "Advocate for gender-responsive climate adaptation policies and women's leadership in climate resilience initiatives.",
-            image:
-                "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        },
-        {
-            name: "Dr. Ahmed El-Mansouri",
-            role: "Regional Integration Specialist",
-            background: "African Union & Regional Cooperation",
-            bio: "Expert in regional climate cooperation frameworks and continental adaptation strategies across African economic communities.",
-            image:
-                "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        },
-        {
-            name: "Maria Santos",
-            role: "International Development Expert",
-            background: "Climate Finance & Development Partnerships",
-            bio: "International development specialist with expertise in climate finance mechanisms and multi-stakeholder partnership development.",
-            image:
-                "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        },
-        {
-            name: "Chief Kofi Mensah",
-            role: "Traditional Authorities Representative",
-            background: "Indigenous Knowledge & Cultural Preservation",
-            bio: "Traditional leader championing the integration of indigenous climate knowledge with modern adaptation strategies.",
-            image:
-                "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+            name: "Rosemary A. Gumba",
+            role: "Environmental Innovation Champion",
+            background: "School Administration & Psychology",
+            bio: "Rosemary Gumba is a multifaceted professional with two decades of experience in school administration and psychology. As a seasoned psychologist, she offers valuable insights, while her experience in school management translates to effective leadership. Her passion extends beyond her core roles, as she actively champions environmental innovation. Rosemary's positive energy and motivational spirit are infectious, uplifting colleagues and inspiring success.",
+            image: "/images/rosemary.png",
         },
     ];
 
@@ -110,44 +56,6 @@ const AboutPage = () => {
     const prevAdvisor = () => {
         setCurrentAdvisor((prev) => (prev - 1 + advisors.length) % advisors.length);
     };
-
-    const components = [
-        {
-            icon: BarChart3,
-            title: "Interactive Dashboard",
-            description:
-                "The LAMA dashboard serves as a central hub for data visualization, analysis, and interaction. It incorporates local, sub-national, national, and global indicators related to adaptation, climate, and weather. The platform facilitates comparative analysis, enabling the co-creation of metrics that align local aspirations with broader adaptation policies and investments.",
-            color: "bg-blue-50 text-blue-600",
-        },
-        {
-            icon: Database,
-            title: "LLA Interventions Database",
-            description:
-                "This component houses information on LLA projects and initiatives implemented across Africa. The database enables the comparison of lessons learned from different interventions, creating a comprehensive repository of adaptation experiences.",
-            color: "bg-green-50 text-green-600",
-        },
-        {
-            icon: Settings,
-            title: "Tools and Framework Repository",
-            description:
-                "The platform provides access to a variety of tools and frameworks employed by different initiatives to assess progress and track indicators. This repository ensures standardization and best practices across projects.",
-            color: "bg-purple-50 text-purple-600",
-        },
-        {
-            icon: Users,
-            title: "Stakeholder Engagement Platform",
-            description:
-                "A comprehensive stakeholder database including individuals and organizations involved in adaptation at both project and policy levels. These stakeholders form the LAMA Engagement Group, convening regularly to share insights on adaptation measurement.",
-            color: "bg-orange-50 text-orange-600",
-        },
-        {
-            icon: Award,
-            title: "Metrics Advisory/Expert Group",
-            description:
-                "Composed of ten experts from diverse backgrounds including the African Group of Negotiators, research, private sector, government, and local communities. This group consolidates best practices and indicators while linking local metrics to national and international frameworks.",
-            color: "bg-red-50 text-red-600",
-        },
-    ];
 
     const objectives = [
         {
@@ -216,10 +124,12 @@ const AboutPage = () => {
                 </div>
 
                 <div className="relative z-10">
+                    {/* Hero Section */}
                     <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-green-50 to-emerald-50">
                         <div className="container mx-auto px-4 sm:px-6">
                             <div className="max-w-7xl mx-auto">
                                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                                    {/* Content Section */}
                                     <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
                                         <div className="inline-flex items-center gap-2 bg-white border border-green-200 rounded-full px-3 sm:px-4 py-2">
                                             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -228,49 +138,30 @@ const AboutPage = () => {
                                             </span>
                                         </div>
 
-                                        <div>
-                                            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight">
-                                                Locally Led Adaptation
-                                                <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent block">
-                                                    Metrics for Africa
-                                                </span>
-                                            </h1>
+                                        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight">
+                                            Bridging the Gap Between
+                                            <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent block">
+                                                Adaptation Needs & Investment
+                                            </span>
+                                        </h1>
 
-                                            <div className="space-y-3 sm:space-y-4 text-base sm:text-lg text-gray-700 leading-relaxed">
-                                                <p>
-                                                    African communities are among the most severely
-                                                    impacted by climate change, with about 50% of its 1.5
-                                                    billion vulnerable people relying on farming for their
-                                                    primary livelihood.
-                                                </p>
-                                                <p className="hidden sm:block">
-                                                    The LAMA Platform convenes diverse stakeholders
-                                                    engaged in LLA initiatives across Africa, facilitating
-                                                    the exchange of experiences, tools, and indicators to
-                                                    inform the Global Goal on Adaptation (GGA) and Global
-                                                    Stocktake (GST).
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-                                            <Link href="/test" className="group">
-                                                <button className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-3">
-                                                    Explore Dashboard
-                                                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-                                                </button>
-                                            </Link>
+                                        <div className="space-y-3 sm:space-y-4 text-base sm:text-lg text-gray-700 leading-relaxed">
+                                            <p>
+                                                Despite growing interest in accelerating locally led adaptation (LLA), evidence on effective interventions, vulnerability-specific approaches, and investment opportunities remains scarce. This gap is primarily due to the absence of dedicated bottom-up indicators or community-led frameworks and metrics.
+                                            </p>
+                                            <p className="hidden sm:block">
+                                                Africa currently hosts numerous adaptation interventions and projects, each operating in isolation, hindered by geographical, linguistic, ethnic, sectoral, and disciplinary disparities. The LAMA Platform addresses this challenge by fostering learning and consolidation of locally led adaptation indicators across Africa.
+                                            </p>
                                         </div>
                                     </div>
 
+                                    {/* Image Section */}
                                     <div className="relative order-1 lg:order-2">
                                         <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-emerald-400/20 rounded-2xl sm:rounded-3xl transform rotate-2 sm:rotate-3"></div>
                                         <div className="relative bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-4 shadow-2xl">
-                                            <Image
-                                                src="https://images.unsplash.com/photo-1569438520635-a89e30b57ad5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                                alt="African communities adapting to climate change"
-                                                width={800}
-                                                height={600}
+                                            <img
+                                                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                                alt="Community collaboration in climate adaptation"
                                                 className="rounded-xl sm:rounded-2xl w-full h-64 sm:h-80 object-cover"
                                             />
                                         </div>
@@ -280,99 +171,82 @@ const AboutPage = () => {
                         </div>
                     </section>
 
+                    {/* The Challenge Section */}
                     <section className="py-12 sm:py-16 lg:py-20">
                         <div className="container mx-auto px-4 sm:px-6">
                             <div className="max-w-6xl mx-auto">
                                 <div className="text-center mb-12 sm:mb-16">
                                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-                                        The <span className="text-green-600">Challenge</span> We
-                                        Address
+                                        The <span className="text-green-600">Challenge</span> We Address
                                     </h2>
                                     <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-                                        Understanding the critical need for locally led adaptation
-                                        in Africa&apos;s most vulnerable communities
+                                        Understanding the critical gaps in locally led adaptation measurement and reporting
                                     </p>
                                 </div>
 
-                                <div className="space-y-8 sm:space-y-12">
-                                    <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                                        <div className="space-y-6">
-                                            <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-6 sm:p-8 border border-red-100">
-                                                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
-                                                    The Reality
-                                                </h3>
-                                                <div className="space-y-3 sm:space-y-4 text-gray-700 text-sm sm:text-base">
-                                                    <p>
-                                                        Despite growing interest in accelerating locally led
-                                                        adaptation (LLA), evidence on effective
-                                                        interventions, vulnerability-specific approaches,
-                                                        and investment opportunities remains scarce.
-                                                    </p>
-                                                    <p>
-                                                        This gap is primarily due to the absence of
-                                                        dedicated bottom-up indicators or community-led
-                                                        frameworks and metrics.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="relative order-first lg:order-last">
-                                            <Image
-                                                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                                alt="Climate change impacts in Africa"
-                                                width={800}
-                                                height={600}
-                                                className="rounded-2xl shadow-xl w-full h-64 sm:h-80 object-cover"
-                                            />
-                                        </div>
+                                <div className="grid md:grid-cols-2 gap-8">
+                                    <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-6 sm:p-8 border border-red-100">
+                                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+                                            Current Reality
+                                        </h3>
+                                        <ul className="space-y-3 text-gray-700">
+                                            <li className="flex items-start gap-3">
+                                                <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                                                <span>Absence of dedicated bottom-up indicators or community-led frameworks</span>
+                                            </li>
+                                            <li className="flex items-start gap-3">
+                                                <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                                                <span>Projects operate in isolation with limited scope assessment frameworks</span>
+                                            </li>
+                                            <li className="flex items-start gap-3">
+                                                <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                                                <span>Evaluations confined to project periods, rarely shared or integrated</span>
+                                            </li>
+                                            <li className="flex items-start gap-3">
+                                                <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                                                <span>Geographical, linguistic, and sectoral disparities hinder collaboration</span>
+                                            </li>
+                                        </ul>
                                     </div>
 
-                                    <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                                        <div className="relative">
-                                            <Image
-                                                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                                alt="Community collaboration"
-                                                width={800}
-                                                height={600}
-                                                className="rounded-2xl shadow-xl w-full h-64 sm:h-80 object-cover"
-                                            />
-                                        </div>
-                                        <div className="space-y-6">
-                                            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 sm:p-8 border border-green-100">
-                                                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
-                                                    Our Solution
-                                                </h3>
-                                                <div className="space-y-3 sm:space-y-4 text-gray-700 text-sm sm:text-base">
-                                                    <p>
-                                                        LAMA addresses this challenge by establishing a
-                                                        comprehensive platform that fosters learning and
-                                                        consolidation of locally led adaptation indicators
-                                                        across Africa.
-                                                    </p>
-                                                    <p>
-                                                        We bridge the gap between adaptation needs and
-                                                        investment through collaborative stakeholder
-                                                        engagement and data-driven insights.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 sm:p-8 border border-green-100">
+                                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+                                            LAMA Solution
+                                        </h3>
+                                        <ul className="space-y-3 text-gray-700">
+                                            <li className="flex items-start gap-3">
+                                                <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                                                <span>Establish a comprehensive platform for learning and consolidation of LLA indicators</span>
+                                            </li>
+                                            <li className="flex items-start gap-3">
+                                                <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                                                <span>Convene stakeholders to facilitate sharing of experiences, tools, and indicators</span>
+                                            </li>
+                                            <li className="flex items-start gap-3">
+                                                <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                                                <span>Develop locally led frameworks to inform Global Goal on Adaptation (GGA)</span>
+                                            </li>
+                                            <li className="flex items-start gap-3">
+                                                <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                                                <span>Bridge the gap between adaptation needs and investment opportunities</span>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
 
+                    {/* Why LAMA Matters Section */}
                     <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
                         <div className="container mx-auto px-4 sm:px-6">
                             <div className="max-w-7xl mx-auto">
                                 <div className="text-center mb-12 sm:mb-16">
                                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-                                        Why <span className="text-green-600">LAMA</span> Matters
+                                        Relevance of the <span className="text-green-600">LAMA Dashboard</span>
                                     </h2>
                                     <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-                                        Four key areas where LAMA dashboard creates transformative
-                                        impact for climate adaptation
+                                        Four key areas where LAMA dashboard creates transformative impact for climate adaptation
                                     </p>
                                 </div>
 
@@ -413,38 +287,39 @@ const AboutPage = () => {
                         </div>
                     </section>
 
+                    {/* Objectives Section */}
                     <section className="py-12 sm:py-16 lg:py-20">
                         <div className="container mx-auto px-4 sm:px-6">
                             <div className="max-w-7xl mx-auto">
                                 <div className="text-center mb-12 sm:mb-16">
                                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-                                        Platform <span className="text-green-600">Components</span>
+                                        Our <span className="text-green-600">Objectives</span>
                                     </h2>
-                                    <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
-                                        Five interconnected components working together to create
-                                        meaningful adaptation outcomes
+                                    <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+                                        Three core objectives driving our mission to advance locally led adaptation across Africa
                                     </p>
                                 </div>
 
-                                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                                    {components.map((component, index) => {
-                                        const Icon = component.icon;
+                                <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
+                                    {objectives.map((objective, index) => {
+                                        const Icon = objective.icon;
                                         return (
-                                            <div key={index} className="group cursor-pointer">
-                                                <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full hover:border-green-200">
-                                                    <div
-                                                        className={`inline-flex p-3 sm:p-4 rounded-xl mb-4 sm:mb-6 ${component.color}`}
-                                                    >
-                                                        <Icon className="w-6 h-6 sm:w-8 sm:h-8" />
-                                                    </div>
-                                                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-green-600 transition-colors duration-300">
-                                                        {component.title}
-                                                    </h3>
-                                                    <p className="text-gray-600 leading-relaxed mb-4 text-sm sm:text-base">
-                                                        {component.description}
-                                                    </p>
-                                                    <div className="inline-flex items-center text-green-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                        Learn more <ArrowRight className="w-4 h-4 ml-1" />
+                                            <div key={index} className="group">
+                                                <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full hover:border-green-200">
+                                                    <div className="text-center">
+                                                        <div className="inline-flex p-3 sm:p-4 bg-green-100 rounded-2xl mb-4 sm:mb-6">
+                                                            <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-green-600" />
+                                                        </div>
+                                                        <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-green-600 transition-colors duration-300">
+                                                            {objective.title}
+                                                        </h3>
+                                                        <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs sm:text-sm font-medium mb-4">
+                                                            <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4" />
+                                                            <span>{objective.highlight}</span>
+                                                        </div>
+                                                        <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+                                                            {objective.description}
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -455,6 +330,7 @@ const AboutPage = () => {
                         </div>
                     </section>
 
+                    {/* Advisory Group Section */}
                     <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-gray-100">
                         <div className="container mx-auto px-4 sm:px-6">
                             <div className="max-w-6xl mx-auto">
@@ -463,17 +339,21 @@ const AboutPage = () => {
                                         LAMA <span className="text-green-600">Advisory Group</span>
                                     </h2>
                                     <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
-                                        Our expert advisory group comprises ten distinguished
-                                        professionals from diverse backgrounds, bringing together
-                                        expertise from the African Group of Negotiators, research
-                                        institutions, private sector, government, and local
-                                        communities.
+                                        Composed of ten experts from diverse backgrounds (including the African Group of Negotiators, research, private sector, government, and local communities), this group will consolidate best practices and indicators. The expert group will also play a crucial role in linking local metrics to national and international frameworks, supporting the African Group of Negotiators' contributions to the Global Goal on Adaptation, and informing IPCC assessments.
                                     </p>
-                                    <div className="inline-flex items-center gap-2 bg-white border border-green-200 rounded-full px-3 sm:px-4 py-2">
-                                        <Award className="w-3 h-3 sm:w-4 sm:h-4 text-green-600" />
-                                        <span className="text-green-700 text-xs sm:text-sm font-medium">
-                                            Expert Network
-                                        </span>
+                                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                                        <div className="inline-flex items-center gap-2 bg-white border border-green-200 rounded-full px-3 sm:px-4 py-2">
+                                            <Award className="w-3 h-3 sm:w-4 sm:h-4 text-green-600" />
+                                            <span className="text-green-700 text-xs sm:text-sm font-medium">
+                                                Expert Network
+                                            </span>
+                                        </div>
+                                        <Link href="/advisory">
+                                            <button className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
+                                                View All Members
+                                                <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
+                                            </button>
+                                        </Link>
                                     </div>
                                 </div>
 
@@ -492,11 +372,9 @@ const AboutPage = () => {
                                                         <div className="relative bg-gradient-to-br from-green-500 to-emerald-600 p-6 sm:p-8 flex items-center justify-center min-h-[300px] md:min-h-[400px]">
                                                             <div className="relative">
                                                                 <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-                                                                    <Image
+                                                                    <img
                                                                         src={advisor.image}
                                                                         alt={advisor.name}
-                                                                        width={400}
-                                                                        height={400}
                                                                         className="w-full h-full object-cover"
                                                                     />
                                                                 </div>
@@ -548,7 +426,6 @@ const AboutPage = () => {
                                             </button>
                                         </div>
 
-                                        {/* Progress Indicators */}
                                         <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">
                                             {advisors.map((_, index) => (
                                                 <button
@@ -562,50 +439,6 @@ const AboutPage = () => {
                                             ))}
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* Objectives Section - Mobile Optimized */}
-                    <section className="py-12 sm:py-16 lg:py-20">
-                        <div className="container mx-auto px-4 sm:px-6">
-                            <div className="max-w-7xl mx-auto">
-                                <div className="text-center mb-12 sm:mb-16">
-                                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-                                        Our <span className="text-green-600">Objectives</span>
-                                    </h2>
-                                    <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-                                        Three core objectives driving our mission to advance locally
-                                        led adaptation across Africa
-                                    </p>
-                                </div>
-
-                                <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
-                                    {objectives.map((objective, index) => {
-                                        const Icon = objective.icon;
-                                        return (
-                                            <div key={index} className="group">
-                                                <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full hover:border-green-200">
-                                                    <div className="text-center">
-                                                        <div className="inline-flex p-3 sm:p-4 bg-green-100 rounded-2xl mb-4 sm:mb-6">
-                                                            <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-green-600" />
-                                                        </div>
-                                                        <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-green-600 transition-colors duration-300">
-                                                            {objective.title}
-                                                        </h3>
-                                                        <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs sm:text-sm font-medium mb-4">
-                                                            <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4" />
-                                                            <span>{objective.highlight}</span>
-                                                        </div>
-                                                        <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                                                            {objective.description}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        );
-                                    })}
                                 </div>
                             </div>
                         </div>

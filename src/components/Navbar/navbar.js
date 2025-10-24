@@ -103,7 +103,7 @@ const LamaNavbar = () => {
 
         {
           name: "Advisory/Expert Group Outputs",
-          href: "/resources/advisory-outputs",
+          href: "/resources/advisory_outputs",
         },
       ],
     },

@@ -104,8 +104,6 @@ const ProgramPage = () => {
                                             </div>
                                         </div>
                                     </div>
-
-
                                 </div>
 
                                 {/* Download Button */}
