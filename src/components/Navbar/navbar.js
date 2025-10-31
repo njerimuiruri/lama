@@ -72,13 +72,13 @@ const LamaNavbar = () => {
           href: "/resources/interventions-database",
           description: "Projects & lessons learned",
         },
-        // {
-        //   name: "Tools & Frameworks",
-        //   href: "/resources/tools-frameworks",
-        //   description: "Guides, documents, data",
-        // },
-        // { name: "Stakeholder Directory", href: "/stakeholders/directory" },
-        // { name: "Impact Stories", href: "/dashboard/impact-stories" },
+        {
+          name: "Tools & Frameworks",
+          href: "/resources/tools-frameworks",
+          description: "Guides, documents, data",
+        },
+        { name: "Stakeholder Directory", href: "/stakeholders/directory" },
+        { name: "Impact Stories", href: "/dashboard/impact-stories" },
       ],
     },
     {
