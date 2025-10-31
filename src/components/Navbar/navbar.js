@@ -86,11 +86,11 @@ const LamaNavbar = () => {
       icon: <Database className="w-4 h-4" />,
       href: "/resources",
       subItems: [
-        // {
-        //   name: "LLA Interventions Database",
-        //   href: "/resources/interventions-database",
-        //   description: "Projects & lessons learned",
-        // },
+        {
+          name: "LLA Interventions Database",
+          href: "/resources/interventions-database",
+          description: "Projects & lessons learned",
+        },
         {
           name: "Tools & Frameworks",
           href: "/resources/tools-frameworks",
