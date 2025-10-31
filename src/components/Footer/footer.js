@@ -31,10 +31,10 @@ const LamaFooter = () => {
   ];
 
   const resources = [
-    {
-      name: "Interventions Database",
-      href: "/resources/interventions-database",
-    },
+    // {
+    //   name: "Interventions Database",
+    //   href: "/resources/interventions-database",
+    // },
     { name: "Tools & Frameworks", href: "/resources/tools-frameworks" },
     { name: "Advisory Outputs", href: "/resources/advisory-outputs" },
     { name: "Impact Stories", href: "/dashboard/impact-stories" },
