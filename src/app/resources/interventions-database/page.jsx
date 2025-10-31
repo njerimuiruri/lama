@@ -1,5 +1,5 @@
 'use client';
-import { useState, useMemo, lazy, Suspense } from "react";
+import { useState, useMemo, lazy, Suspense, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import {
@@ -39,8 +39,13 @@ export default function ClimateAdaptationDashboard() {
     const [selectedTheme, setSelectedTheme] = useState("all");
     const [selectedRegion, setSelectedRegion] = useState("all");
     const [selectedPeriod, setSelectedPeriod] = useState("all");
+    const [isClient, setIsClient] = useState(false);
 
     const projects = projectsData;
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
 
     const filteredProjects = useMemo(() => {
         return projects.filter((project) => {
@@ -293,8 +298,6 @@ export default function ClimateAdaptationDashboard() {
         <>
             <LamaNavbar />
 
-
-
             <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50">
                 <div className="container mx-auto px-4 py-8">
                     <header className="mb-8 text-center">
@@ -458,19 +461,21 @@ export default function ClimateAdaptationDashboard() {
                     </Card>
 
                     {/* Map Section */}
-                    <Card className="bg-white shadow-lg mb-8 border-0">
-                        <CardHeader className="pb-4">
-                            <CardTitle className="text-xl font-semibold text-gray-900">Project Locations</CardTitle>
-                            <p className="text-sm text-gray-600 mt-1">
-                                {filteredProjects.length} project(s) found • {statistics.uniqueCountries} countr{statistics.uniqueCountries !== 1 ? 'ies' : 'y'}
-                            </p>
-                        </CardHeader>
-                        <CardContent className="p-0">
-                            <Suspense fallback={<MapLoader />}>
-                                <ClimateMap projects={filteredProjects} />
-                            </Suspense>
-                        </CardContent>
-                    </Card>
+                    {isClient && (
+                        <Card className="bg-white shadow-lg mb-8 border-0">
+                            <CardHeader className="pb-4">
+                                <CardTitle className="text-xl font-semibold text-gray-900">Project Locations</CardTitle>
+                                <p className="text-sm text-gray-600 mt-1">
+                                    {filteredProjects.length} project(s) found • {statistics.uniqueCountries} countr{statistics.uniqueCountries !== 1 ? 'ies' : 'y'}
+                                </p>
+                            </CardHeader>
+                            <CardContent className="p-0">
+                                <Suspense fallback={<MapLoader />}>
+                                    <ClimateMap projects={filteredProjects} />
+                                </Suspense>
+                            </CardContent>
+                        </Card>
+                    )}
 
                     {/* Projects List */}
                     <Card className="bg-white shadow-lg mb-8 border-0">
@@ -481,8 +486,6 @@ export default function ClimateAdaptationDashboard() {
                             {renderProjects()}
                         </CardContent>
                     </Card>
-
-
                 </div>
             </div>
             <LamaFooter />
