@@ -7,6 +7,13 @@ import LamaFooter from '@/components/Footer/footer';
 const AdvisoryPage = () => {
     const advisoryMembers = [
         {
+            name: "Marie-Eve",
+            role: "IDRC : Funder",
+            image: "/images/marie-eve.jpeg",
+            bio: "",
+            expertise: [""]
+        },
+        {
             name: "Ms. Omari Kulthoum",
             role: "Coordinator for the African Group of Negotiations (AGN) on the Africa Adaptation Initiative",
             image: "/images/omar.png",
@@ -28,12 +35,50 @@ const AdvisoryPage = () => {
             expertise: ["Climate Justice", "Community Development", "Policy Development"]
         },
         {
-            name: "Rosemary A. Gumba",
-            role: "Environmental Innovation Champion",
-            image: "/images/rosemary.png",
-            bio: "Rosemary Gumba is a multifaceted professional with two decades of experience in school administration and psychology. As a seasoned psychologist, she offers valuable insights, while her experience in school management translates to effective leadership. Her passion extends beyond her core roles, as she actively champions environmental innovation. Rosemary's positive energy and motivational spirit are infectious, uplifting colleagues and inspiring success. Finding inspiration in her family – husband, children, and grandchildren – Rosemary maintains a healthy work-life balance, enjoying reading, movies, and playful moments with her loved ones.",
-            expertise: ["Environmental Innovation", "Leadership", "Psychology"]
-        }
+            name: "Victoria Rubadiri",
+            role: "Media/Journalism : Royal Media",
+            image: "/images/victoria.jpg",
+            bio: "",
+            expertise: ["Journalism", "Media"]
+        },
+        {
+            name: "Prof Cromwel Lukorito",
+            role: "IPCC Adaptation Lead",
+            image: "/images/CromwelLukorito_PP.webp",
+            bio: "a leading figure in advancing global climate adaptation efforts, particularly with a focus on Africa.His role involves guiding the assessment of climate change impacts, vulnerabilities, and adaptation measures, with a specific emphasis on socio- economic and natural systems",
+            expertise: ["Journalism", "Media"]
+        },
+        {
+            name: "Victor Nyagaya",
+            role: "CEO Lake Region thegREB",
+            image: "",
+            bio: "Victor Nyagaya is the Chief Executive Officer of the Lake Region Economic Bloc (LREB), a regional body representing 14 counties in Kenya's Lake Basin region, which has a population of over 14 million people, constituting about 30% of Kenya's total population.In this role, he is responsible for driving the socioeconomic aspirations of the region.",
+            expertise: [""]
+        },
+        {
+            name: "Mr Malik Aman",
+            role: "Rep of the World Bank/ FLOCA - Kenya Treasury",
+            image: "",
+            bio: "",
+            expertise: [""]
+        },
+        {
+            name: "Dr Mithika Mwenda",
+            role: "Pan-African Climate Justice Alliance",
+            image: "",
+            bio: "",
+            expertise: [""]
+        },
+        {
+            name: "Mr Thomas Lerenten",
+            role: "Adaptation Lead - Ministry of Environment, Kenya",
+            image: "",
+            bio: "",
+            expertise: [""]
+        },
+
+
+
     ];
 
     return (

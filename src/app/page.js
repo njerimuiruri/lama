@@ -6,6 +6,7 @@ import ImpactsPage from "./ImpactsPage/page";
 import AboutSection from "./Aboutsection/page";
 import BlogsPage from "./blogssection/page";
 import LamaFooter from "@/components/Footer/footer";
+import ResearchQuestionsSection from "./researchquestions/page";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       {/* <StatsPage /> */}
+      <ResearchQuestionsSection />
       <ImpactsPage />
       <BlogsPage />
       <LamaFooter />

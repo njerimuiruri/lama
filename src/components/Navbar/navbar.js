@@ -72,13 +72,13 @@ const LamaNavbar = () => {
           href: "/resources/interventions-database",
           description: "Projects & lessons learned",
         },
-        {
-          name: "Tools & Frameworks",
-          href: "/resources/tools-frameworks",
-          description: "Guides, documents, data",
-        },
-        { name: "Stakeholder Directory", href: "/stakeholders/directory" },
-        { name: "Impact Stories", href: "/dashboard/impact-stories" },
+        // {
+        //   name: "Tools & Frameworks",
+        //   href: "/resources/tools-frameworks",
+        //   description: "Guides, documents, data",
+        // },
+        // { name: "Stakeholder Directory", href: "/stakeholders/directory" },
+        // { name: "Impact Stories", href: "/dashboard/impact-stories" },
       ],
     },
     {
@@ -96,10 +96,10 @@ const LamaNavbar = () => {
           href: "/resources/tools-frameworks",
           description: "Guides, documents, data",
         },
-        {
-          name: "Stakeholder Engagement Directory",
-          href: "/stakeholders/directory",
-        },
+        // {
+        //   name: "Stakeholder Engagement Directory",
+        //   href: "/stakeholders/directory",
+        // },
 
         {
           name: "Advisory/Expert Group Outputs",
@@ -118,7 +118,7 @@ const LamaNavbar = () => {
           href: "/stakeholders/diaries-blogs",
           description: "Voices of women, youth, communities, experts",
         },
-        { name: "Collaboration Space", href: "/stakeholders/collaboration" },
+        // { name: "Collaboration Space", href: "/stakeholders/collaboration" },
       ],
     },
     {
@@ -164,7 +164,7 @@ const LamaNavbar = () => {
           >
             <div className="w-8 h-8 sm:w-10 sm:h-10 relative flex-shrink-0">
               <Image
-                src="/logo.png"
+                src="/images/LAMA-logo.png"
                 alt="LAMA Logo"
                 width={40}
                 height={40}

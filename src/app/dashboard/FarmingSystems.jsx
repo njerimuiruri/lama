@@ -4,7 +4,6 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { Filter, TrendingUp, Users, PieChart } from 'lucide-react';
 
 const FarmingSystems = () => {
-    // Updated data based on your spreadsheet
     const genderFarmingSystems = [
         { category: 'Female', type: 'Both', count: 100, percent: 35.6 },
         { category: 'Female', type: 'Commercial', count: 12, percent: 4.3 },

@@ -6,7 +6,6 @@ import {
 } from 'lucide-react';
 import LamaNavbar from '@/components/Navbar/navbar';
 import LamaFooter from '@/components/Footer/footer';
-import Link from 'next/link';
 
 const AboutPage = () => {
     const [currentAdvisor, setCurrentAdvisor] = useState(0);
@@ -16,7 +15,7 @@ const AboutPage = () => {
             name: "Ms. Omari Kulthoum",
             role: "Coordinator for the African Group of Negotiations (AGN)",
             background: "Climate Adaptation & Drought Governance",
-            bio: "Coordinator for the African Group of Negotiations (AGN) on the Africa Adaptation Initiative. She's also a PhD candidate at the University of Cape Town with the African Climate Development Initiative studying adaptation governance, with a particular focus on drought governance in Botswana. She has extensive experience in climate adaptation, and in 2018, she joined the Adaptation Committee (AC).",
+            bio: "Coordinator for the African Group of Negotiations (AGN) on the Africa Adaptation Initiative. She&rsquo;s also a PhD candidate at the University of Cape Town with the African Climate Development Initiative studying adaptation governance, with a particular focus on drought governance in Botswana. She has extensive experience in climate adaptation, and in 2018, she joined the Adaptation Committee (AC).",
             image: "/images/omari.png",
         },
         {
@@ -37,7 +36,7 @@ const AboutPage = () => {
             name: "Rosemary A. Gumba",
             role: "Environmental Innovation Champion",
             background: "School Administration & Psychology",
-            bio: "Rosemary Gumba is a multifaceted professional with two decades of experience in school administration and psychology. As a seasoned psychologist, she offers valuable insights, while her experience in school management translates to effective leadership. Her passion extends beyond her core roles, as she actively champions environmental innovation. Rosemary's positive energy and motivational spirit are infectious, uplifting colleagues and inspiring success.",
+            bio: "Rosemary Gumba is a multifaceted professional with two decades of experience in school administration and psychology. As a seasoned psychologist, she offers valuable insights, while her experience in school management translates to effective leadership. Her passion extends beyond her core roles, as she actively champions environmental innovation. Rosemary&rsquo;s positive energy and motivational spirit are infectious, uplifting colleagues and inspiring success.",
             image: "/images/rosemary.png",
         },
     ];
@@ -115,7 +114,6 @@ const AboutPage = () => {
     return (
         <>
             <LamaNavbar />
-
             <div className="min-h-screen bg-white">
                 <div className="absolute inset-0 overflow-hidden">
                     <div className="absolute top-16 sm:top-32 right-4 sm:right-20 w-32 h-32 sm:w-64 sm:h-64 bg-gradient-to-br from-green-50 to-emerald-50 rounded-full blur-2xl sm:blur-3xl opacity-40"></div>
@@ -339,7 +337,7 @@ const AboutPage = () => {
                                         LAMA <span className="text-green-600">Advisory Group</span>
                                     </h2>
                                     <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
-                                        Composed of ten experts from diverse backgrounds (including the African Group of Negotiators, research, private sector, government, and local communities), this group will consolidate best practices and indicators. The expert group will also play a crucial role in linking local metrics to national and international frameworks, supporting the African Group of Negotiators' contributions to the Global Goal on Adaptation, and informing IPCC assessments.
+                                        Composed of ten experts from diverse backgrounds (including the African Group of Negotiators, research, private sector, government, and local communities), this group will consolidate best practices and indicators. The expert group will also play a crucial role in linking local metrics to national and international frameworks, supporting the African Group of Negotiators&rsquo; contributions to the Global Goal on Adaptation, and informing IPCC assessments.
                                     </p>
                                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                                         <div className="inline-flex items-center gap-2 bg-white border border-green-200 rounded-full px-3 sm:px-4 py-2">
@@ -348,12 +346,10 @@ const AboutPage = () => {
                                                 Expert Network
                                             </span>
                                         </div>
-                                        <Link href="/advisory">
-                                            <button className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
-                                                View All Members
-                                                <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
-                                            </button>
-                                        </Link>
+                                        <button className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
+                                            View All Members
+                                            <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
+                                        </button>
                                     </div>
                                 </div>
 
@@ -400,9 +396,7 @@ const AboutPage = () => {
                                                                     {advisor.background}
                                                                 </p>
                                                             </div>
-                                                            <p className="text-gray-700 leading-relaxed italic text-sm sm:text-base">
-                                                                &ldquo;{advisor.bio}&rdquo;
-                                                            </p>
+                                                            <p className="text-gray-700 leading-relaxed italic text-sm sm:text-base" dangerouslySetInnerHTML={{ __html: `&ldquo;${advisor.bio}&rdquo;` }} />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -445,8 +439,14 @@ const AboutPage = () => {
                     </section>
                 </div>
             </div>
+
             <LamaFooter />
+
+
         </>
+
+
+
     );
 };
 

@@ -64,7 +64,7 @@ const LamaFooter = () => {
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-10 h-10 relative">
                 <Image
-                  src="/logo.png"
+                  src="/images/LAMA-logo.png"
                   alt="LAMA Logo"
                   width={40}
                   height={40}
@@ -151,7 +151,6 @@ const LamaFooter = () => {
               ))}
             </ul>
 
-            {/* Contact Info */}
             <div className="space-y-2">
               <h4 className="font-medium text-gray-900 text-sm">Contact</h4>
               <div className="flex items-center space-x-2 text-sm text-gray-600">
@@ -160,14 +159,14 @@ const LamaFooter = () => {
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-600">
                 <Phone className="w-4 h-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+254746130873</span>
               </div>
               <div className="flex items-start space-x-2 text-sm text-gray-600">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                 <span>
-                  123 Platform Street
+                  Bishop Road, 1St Ngong Ave, Upperhill, Nairobi. P.O Box 53358
                   <br />
-                  Innovation City, IC 12345
+                  P.O Box 53358 - 00200.
                 </span>
               </div>
             </div>
