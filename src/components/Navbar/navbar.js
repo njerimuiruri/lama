@@ -57,7 +57,7 @@ const LamaNavbar = () => {
     {
       name: "Components",
       icon: <Target className="w-4 h-4" />,
-      href: "/dashboard",
+      href: "/dashboard/sitedashboard",
       subItems: [
         // {
         //   name: "Test",
@@ -77,14 +77,14 @@ const LamaNavbar = () => {
           href: "/resources/tools-frameworks",
           description: "Guides, documents, data",
         },
-        { name: "Stakeholder Directory", href: "/stakeholders/directory" },
+        // { name: "Stakeholder Directory", href: "/stakeholders/directory" },
         { name: "Impact Stories", href: "/dashboard/impact-stories" },
       ],
     },
     {
       name: "Resources",
       icon: <Database className="w-4 h-4" />,
-      href: "/resources",
+      href: "/resources/interventions-database",
       subItems: [
         {
           name: "LLA Interventions Database",
@@ -110,9 +110,9 @@ const LamaNavbar = () => {
     {
       name: "Stakeholders",
       icon: <Users className="w-4 h-4" />,
-      href: "/stakeholders",
+      href: "/resources/advisory_outputs",
       subItems: [
-        { name: "Stakeholder Directory", href: "/stakeholders/directory" },
+        { name: "Stakeholder Directory", href: "/resources/advisory_outputs" },
         {
           name: "LAMA Diaries & Blogs",
           href: "/stakeholders/diaries-blogs",
