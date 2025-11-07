@@ -543,7 +543,6 @@ export default function ClimateAdaptationDashboard() {
                         )}
                     </Card>
 
-                    {/* Map Section */}
                     {isClient && (
                         <Card className="bg-white shadow-xl mb-8 border-0 overflow-hidden">
                             <CardHeader className="pb-4 bg-gradient-to-r from-blue-50 to-green-50 border-b">
