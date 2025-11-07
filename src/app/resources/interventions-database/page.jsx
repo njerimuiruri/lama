@@ -18,7 +18,8 @@ import {
     TableRow,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { Globe, DollarSign, MapPin, Activity, Calendar } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Globe, DollarSign, MapPin, Activity, ChevronDown, ChevronUp, Search, Filter, X } from "lucide-react";
 import projectsData from "../../../../data/data/projects.json";
 import LamaNavbar from "@/components/Navbar/navbar";
 import LamaFooter from "@/components/Footer/footer";
@@ -28,8 +29,11 @@ const ClimateMap = lazy(() => import("@/components/ClimateMap"));
 
 // Loading component for the map
 const MapLoader = () => (
-    <div className="h-[500px] w-full bg-gray-100 rounded-lg flex items-center justify-center">
-        <p className="text-gray-500">Loading map...</p>
+    <div className="h-[600px] w-full bg-gradient-to-br from-blue-50 to-green-50 rounded-xl flex items-center justify-center">
+        <div className="text-center space-y-3">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+            <p className="text-gray-600 font-medium">Loading interactive map...</p>
+        </div>
     </div>
 );
 
@@ -40,6 +44,9 @@ export default function ClimateAdaptationDashboard() {
     const [selectedRegion, setSelectedRegion] = useState("all");
     const [selectedPeriod, setSelectedPeriod] = useState("all");
     const [isClient, setIsClient] = useState(false);
+    const [showTable, setShowTable] = useState(false);
+    const [showFilters, setShowFilters] = useState(true);
+    const [hoveredProject, setHoveredProject] = useState(null);
 
     const projects = projectsData;
 
@@ -71,17 +78,14 @@ export default function ClimateAdaptationDashboard() {
         });
     }, [projects, searchQuery, selectedCountry, selectedTheme, selectedRegion, selectedPeriod]);
 
-    // Group projects by country for combined view - NO DUPLICATES
     const projectsByCountry = useMemo(() => {
         const grouped = {};
-
         projects.forEach(project => {
             if (!grouped[project.Country]) {
                 grouped[project.Country] = [];
             }
             grouped[project.Country].push(project);
         });
-
         return grouped;
     }, [projects]);
 
@@ -123,11 +127,9 @@ export default function ClimateAdaptationDashboard() {
         return Array.from(uniqueRegions).sort();
     }, [projects]);
 
-    // Remove duplicates from periods using Set
     const periods = useMemo(() => {
         const uniquePeriods = new Set(projects.map((project) => project["Period"]));
         return Array.from(uniquePeriods).sort((a, b) => {
-            // Sort periods by year (extract start year and compare)
             const getStartYear = (period) => {
                 const year = period.split('-')[0];
                 return parseInt(year) || 0;
@@ -136,10 +138,19 @@ export default function ClimateAdaptationDashboard() {
         });
     }, [projects]);
 
-    // Function to render projects based on whether we're filtering by period
+    const clearFilters = () => {
+        setSearchQuery("");
+        setSelectedCountry("all");
+        setSelectedTheme("all");
+        setSelectedRegion("all");
+        setSelectedPeriod("all");
+    };
+
+    const hasActiveFilters = searchQuery || selectedCountry !== "all" || selectedTheme !== "all" ||
+        selectedRegion !== "all" || selectedPeriod !== "all";
+
     const renderProjects = () => {
         if (selectedPeriod === "all") {
-            // Combined view - group by country (NO DUPLICATES)
             const filteredCountries = countries.filter(country =>
                 projectsByCountry[country]?.some(project =>
                     filteredProjects.some(filteredProject =>
@@ -150,13 +161,23 @@ export default function ClimateAdaptationDashboard() {
 
             if (filteredCountries.length === 0) {
                 return (
-                    <div className="text-center py-12 text-gray-500">
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                            <Activity className="h-8 w-8 text-gray-300" />
-                            <p className="text-lg font-medium text-gray-400">No projects found</p>
+                    <div className="text-center py-16 text-gray-500">
+                        <div className="flex flex-col items-center justify-center space-y-4">
+                            <Activity className="h-16 w-16 text-gray-300" />
+                            <p className="text-xl font-semibold text-gray-400">No projects found</p>
                             <p className="text-sm text-gray-500">
                                 Try adjusting your search criteria or filters
                             </p>
+                            {hasActiveFilters && (
+                                <Button
+                                    variant="outline"
+                                    onClick={clearFilters}
+                                    className="mt-4"
+                                >
+                                    <X className="h-4 w-4 mr-2" />
+                                    Clear all filters
+                                </Button>
+                            )}
                         </div>
                     </div>
                 );
@@ -172,46 +193,63 @@ export default function ClimateAdaptationDashboard() {
                 if (countryProjects.length === 0) return null;
 
                 return (
-                    <div key={country} className="mb-6 last:mb-0">
-                        <div className="bg-gray-50 p-4 rounded-lg mb-3">
-                            <h3 className="text-lg font-semibold text-gray-900">{country}</h3>
-                            <p className="text-sm text-gray-600">
-                                {countryProjects.length} project{countryProjects.length !== 1 ? 's' : ''} •
-                                Total: ${countryProjects.reduce((sum, p) => sum + parseFloat(p["Project Amount ($ Million)"] || "0"), 0).toLocaleString()}M
-                            </p>
+                    <div key={country} className="mb-8 last:mb-0 animate-fadeIn">
+                        <div className="bg-gradient-to-r from-blue-50 to-green-50 p-5 rounded-xl mb-4 border border-blue-100 shadow-sm">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
+                                        <MapPin className="h-5 w-5 text-blue-600" />
+                                        {country}
+                                    </h3>
+                                    <p className="text-sm text-gray-600 mt-1">
+                                        {countryProjects.length} project{countryProjects.length !== 1 ? 's' : ''} •
+                                        <span className="font-semibold ml-1">
+                                            ${countryProjects.reduce((sum, p) => sum + parseFloat(p["Project Amount ($ Million)"] || "0"), 0).toLocaleString()}M
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div className="space-y-3">
+                        <div className="space-y-4">
                             {countryProjects.map((project, index) => (
-                                <div key={index} className="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
-                                    <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-                                        <div>
-                                            <h4 className="font-semibold text-gray-900 text-sm mb-1">
+                                <div
+                                    key={index}
+                                    className="bg-white p-6 rounded-xl border border-gray-200 hover:shadow-lg hover:border-blue-300 transition-all duration-300 transform hover:-translate-y-1"
+                                    onMouseEnter={() => setHoveredProject(project)}
+                                    onMouseLeave={() => setHoveredProject(null)}
+                                >
+                                    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                                        <div className="lg:col-span-2">
+                                            <h4 className="font-bold text-gray-900 text-base mb-2 leading-tight">
                                                 {project["Adaptation Interventions"]}
                                             </h4>
-                                            <p className="text-xs text-gray-500">
-                                                {project.Instruments && project.Instruments !== "none" ? project.Instruments : "No specific instrument"}
+                                            <p className="text-sm text-gray-500 italic">
+                                                {project.Instruments && project.Instruments !== "none"
+                                                    ? project.Instruments
+                                                    : "No specific instrument"}
                                             </p>
                                         </div>
-                                        <div>
-                                            <Badge variant="secondary" className="bg-blue-100 text-blue-800 border-0 text-xs mb-2">
+                                        <div className="space-y-2">
+                                            <Badge variant="secondary" className="bg-blue-100 text-blue-800 border-0 text-xs font-medium px-3 py-1">
                                                 {project["Thematic Area(s)"]}
                                             </Badge>
-                                            <p className="text-sm text-gray-600">{project["Region"]}</p>
+                                            <p className="text-sm text-gray-600 flex items-center gap-1">
+                                                <Globe className="h-3 w-3" />
+                                                {project["Region"]}
+                                            </p>
+                                            <p className="text-sm text-gray-600">{project["Funders"]}</p>
                                         </div>
-                                        <div>
-                                            <p className="text-sm text-gray-600 mb-1">{project["Funders"]}</p>
-                                            <p className="text-sm text-gray-700">{project["Period"]}</p>
-                                        </div>
-                                        <div className="text-right">
-                                            <p className="font-semibold text-gray-900 text-lg">
+                                        <div className="text-right space-y-2">
+                                            <p className="font-bold text-gray-900 text-2xl">
                                                 ${parseFloat(project["Project Amount ($ Million)"]).toLocaleString()}M
                                             </p>
+                                            <p className="text-sm text-gray-500">{project["Period"]}</p>
                                             <Badge className={`
-                        ${project["Implementation Status"] === "Under Implementation"
-                                                    ? "bg-green-100 text-green-800"
-                                                    : "bg-yellow-100 text-yellow-800"
-                                                } border-0 text-xs font-medium
-                      `}>
+                                                ${project["Implementation Status"] === "Under Implementation"
+                                                    ? "bg-green-100 text-green-800 border-green-200"
+                                                    : "bg-yellow-100 text-yellow-800 border-yellow-200"
+                                                } border text-xs font-medium px-3 py-1
+                                            `}>
                                                 {project["Implementation Status"]}
                                             </Badge>
                                         </div>
@@ -223,73 +261,81 @@ export default function ClimateAdaptationDashboard() {
                 );
             });
         } else {
-            // Individual view when filtering by period
             return (
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead>Project</TableHead>
-                            <TableHead>Region</TableHead>
-                            <TableHead>Country</TableHead>
-                            <TableHead>Theme</TableHead>
-                            <TableHead>Funders</TableHead>
-                            <TableHead className="text-right">Amount</TableHead>
-                            <TableHead>Period</TableHead>
-                            <TableHead>Status</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {filteredProjects.map((project, index) => (
-                            <TableRow key={index} className="hover:bg-gray-50 transition-colors duration-150">
-                                <TableCell className="font-medium max-w-md py-4">
-                                    <div className="space-y-1">
-                                        <p className="font-semibold text-gray-900 text-sm">
-                                            {project["Adaptation Interventions"]}
-                                        </p>
-                                        <p className="text-xs text-gray-500">
-                                            {project.Instruments && project.Instruments !== "none" ? project.Instruments : "No specific instrument"}
-                                        </p>
-                                    </div>
-                                </TableCell>
-                                <TableCell className="py-4">
-                                    <span className="text-sm text-gray-700">{project["Region"]}</span>
-                                </TableCell>
-                                <TableCell className="py-4">
-                                    <span className="font-medium text-gray-900">{project["Country"]}</span>
-                                </TableCell>
-                                <TableCell className="py-4">
-                                    <Badge
-                                        variant="secondary"
-                                        className="bg-blue-100 text-blue-800 hover:bg-blue-200 border-0 text-xs"
-                                    >
-                                        {project["Thematic Area(s)"]}
-                                    </Badge>
-                                </TableCell>
-                                <TableCell className="py-4">
-                                    <span className="text-sm text-gray-600">{project["Funders"]}</span>
-                                </TableCell>
-                                <TableCell className="text-right py-4">
-                                    <span className="font-semibold text-gray-900">
-                                        ${parseFloat(project["Project Amount ($ Million)"]).toLocaleString()}
-                                    </span>
-                                </TableCell>
-                                <TableCell className="py-4">
-                                    <span className="text-sm text-gray-700">{project["Period"]}</span>
-                                </TableCell>
-                                <TableCell className="py-4">
-                                    <Badge className={`
-                    ${project["Implementation Status"] === "Under Implementation"
-                                            ? "bg-green-100 text-green-800 hover:bg-green-200"
-                                            : "bg-yellow-100 text-yellow-800 hover:bg-yellow-200"
-                                        } border-0 text-xs font-medium
-                  `}>
-                                        {project["Implementation Status"]}
-                                    </Badge>
-                                </TableCell>
+                <div className="overflow-x-auto">
+                    <Table>
+                        <TableHeader>
+                            <TableRow className="bg-gray-50">
+                                <TableHead className="font-semibold">Project</TableHead>
+                                <TableHead className="font-semibold">Region</TableHead>
+                                <TableHead className="font-semibold">Country</TableHead>
+                                <TableHead className="font-semibold">Theme</TableHead>
+                                <TableHead className="font-semibold">Funders</TableHead>
+                                <TableHead className="text-right font-semibold">Amount</TableHead>
+                                <TableHead className="font-semibold">Period</TableHead>
+                                <TableHead className="font-semibold">Status</TableHead>
                             </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
+                        </TableHeader>
+                        <TableBody>
+                            {filteredProjects.map((project, index) => (
+                                <TableRow
+                                    key={index}
+                                    className="hover:bg-blue-50 transition-colors duration-200"
+                                    onMouseEnter={() => setHoveredProject(project)}
+                                    onMouseLeave={() => setHoveredProject(null)}
+                                >
+                                    <TableCell className="font-medium max-w-md py-4">
+                                        <div className="space-y-1">
+                                            <p className="font-semibold text-gray-900 text-sm">
+                                                {project["Adaptation Interventions"]}
+                                            </p>
+                                            <p className="text-xs text-gray-500 italic">
+                                                {project.Instruments && project.Instruments !== "none"
+                                                    ? project.Instruments
+                                                    : "No specific instrument"}
+                                            </p>
+                                        </div>
+                                    </TableCell>
+                                    <TableCell className="py-4">
+                                        <span className="text-sm text-gray-700">{project["Region"]}</span>
+                                    </TableCell>
+                                    <TableCell className="py-4">
+                                        <span className="font-medium text-gray-900">{project["Country"]}</span>
+                                    </TableCell>
+                                    <TableCell className="py-4">
+                                        <Badge
+                                            variant="secondary"
+                                            className="bg-blue-100 text-blue-800 hover:bg-blue-200 border-0 text-xs"
+                                        >
+                                            {project["Thematic Area(s)"]}
+                                        </Badge>
+                                    </TableCell>
+                                    <TableCell className="py-4">
+                                        <span className="text-sm text-gray-600">{project["Funders"]}</span>
+                                    </TableCell>
+                                    <TableCell className="text-right py-4">
+                                        <span className="font-semibold text-gray-900">
+                                            ${parseFloat(project["Project Amount ($ Million)"]).toLocaleString()}M
+                                        </span>
+                                    </TableCell>
+                                    <TableCell className="py-4">
+                                        <span className="text-sm text-gray-700">{project["Period"]}</span>
+                                    </TableCell>
+                                    <TableCell className="py-4">
+                                        <Badge className={`
+                                            ${project["Implementation Status"] === "Under Implementation"
+                                                ? "bg-green-100 text-green-800 hover:bg-green-200"
+                                                : "bg-yellow-100 text-yellow-800 hover:bg-yellow-200"
+                                            } border-0 text-xs font-medium
+                                        `}>
+                                            {project["Implementation Status"]}
+                                        </Badge>
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </div>
             );
         }
     };
@@ -298,197 +344,281 @@ export default function ClimateAdaptationDashboard() {
         <>
             <LamaNavbar />
 
-            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50">
-                <div className="container mx-auto px-4 py-8">
-                    <header className="mb-8 text-center">
-                        <h1 className="text-4xl font-bold text-gray-900 mb-2">
-                            Climate Adaptation Projects Dashboard
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+                <div className="container mx-auto px-4 py-8 max-w-7xl">
+                    <header className="mb-10 text-center animate-fadeIn">
+                        <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600 mb-3">
+                            Climate Adaptation Projects
                         </h1>
-                        <p className="text-gray-600 text-lg">
-                            Track climate resilience and adaptation projects across Africa
+                        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                            Track climate resilience and adaptation initiatives across Africa
                         </p>
                     </header>
 
                     {/* Statistics Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                        <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 animate-fadeIn">
+                        <Card className="bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 border-0 transform hover:scale-105">
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                                <CardTitle className="text-sm font-medium text-gray-600">Total Projects</CardTitle>
-                                <Activity className="h-4 w-4 text-blue-600" />
+                                <CardTitle className="text-sm font-medium text-blue-100">Total Projects</CardTitle>
+                                <Activity className="h-5 w-5 text-blue-100" />
                             </CardHeader>
                             <CardContent>
-                                <div className="text-2xl font-bold text-gray-900">{statistics.totalProjects}</div>
-                                <p className="text-xs text-gray-500 mt-1">Active initiatives</p>
+                                <div className="text-3xl font-bold">{statistics.totalProjects}</div>
+                                <p className="text-xs text-blue-100 mt-1">Active initiatives</p>
                             </CardContent>
                         </Card>
 
-                        <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
+                        <Card className="bg-gradient-to-br from-green-500 to-green-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 border-0 transform hover:scale-105">
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                                <CardTitle className="text-sm font-medium text-gray-600">Total Funding</CardTitle>
-                                <DollarSign className="h-4 w-4 text-green-600" />
+                                <CardTitle className="text-sm font-medium text-green-100">Total Funding</CardTitle>
+                                <DollarSign className="h-5 w-5 text-green-100" />
                             </CardHeader>
                             <CardContent>
-                                <div className="text-2xl font-bold text-gray-900">
+                                <div className="text-3xl font-bold">
                                     ${statistics.totalFunding.toFixed(1)}M
                                 </div>
-                                <p className="text-xs text-gray-500 mt-1">Investment committed</p>
+                                <p className="text-xs text-green-100 mt-1">Investment committed</p>
                             </CardContent>
                         </Card>
 
-                        <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
+                        <Card className="bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 border-0 transform hover:scale-105">
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                                <CardTitle className="text-sm font-medium text-gray-600">
+                                <CardTitle className="text-sm font-medium text-orange-100">
                                     {selectedPeriod === "all" ? "Countries" : "Active Countries"}
                                 </CardTitle>
-                                <Globe className="h-4 w-4 text-orange-600" />
+                                <Globe className="h-5 w-5 text-orange-100" />
                             </CardHeader>
                             <CardContent>
-                                <div className="text-2xl font-bold text-gray-900">{statistics.uniqueCountries}</div>
-                                <p className="text-xs text-gray-500 mt-1">
+                                <div className="text-3xl font-bold">{statistics.uniqueCountries}</div>
+                                <p className="text-xs text-orange-100 mt-1">
                                     {selectedPeriod === "all" ? "Regional coverage" : "Countries in period"}
                                 </p>
                             </CardContent>
                         </Card>
 
-                        <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
+                        <Card className="bg-gradient-to-br from-purple-500 to-purple-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 border-0 transform hover:scale-105">
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                                <CardTitle className="text-sm font-medium text-gray-600">Active Projects</CardTitle>
-                                <MapPin className="h-4 w-4 text-red-600" />
+                                <CardTitle className="text-sm font-medium text-purple-100">Active Projects</CardTitle>
+                                <MapPin className="h-5 w-5 text-purple-100" />
                             </CardHeader>
                             <CardContent>
-                                <div className="text-2xl font-bold text-gray-900">{statistics.activeProjects}</div>
-                                <p className="text-xs text-gray-500 mt-1">Currently running</p>
+                                <div className="text-3xl font-bold">{statistics.activeProjects}</div>
+                                <p className="text-xs text-purple-100 mt-1">Currently running</p>
                             </CardContent>
                         </Card>
                     </div>
 
                     {/* Filters */}
-                    <Card className="bg-white shadow-lg mb-8 border-0">
-                        <CardHeader className="pb-4">
-                            <CardTitle className="text-xl font-semibold text-gray-900">Filter Projects</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium text-gray-700">
-                                        Search Projects
-                                    </label>
-                                    <Input
-                                        placeholder="Search by title, country, or funder..."
-                                        value={searchQuery}
-                                        onChange={(e) => setSearchQuery(e.target.value)}
-                                        className="w-full border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-                                    />
+                    <Card className="bg-white shadow-xl mb-8 border-0 overflow-hidden">
+                        <CardHeader className="pb-4 bg-gradient-to-r from-blue-50 to-green-50 border-b">
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-2">
+                                    <Filter className="h-5 w-5 text-blue-600" />
+                                    <CardTitle className="text-xl font-bold text-gray-900">Filter Projects</CardTitle>
+                                    {hasActiveFilters && (
+                                        <Badge variant="secondary" className="bg-blue-100 text-blue-700">
+                                            {[searchQuery ? 1 : 0,
+                                            selectedCountry !== "all" ? 1 : 0,
+                                            selectedTheme !== "all" ? 1 : 0,
+                                            selectedRegion !== "all" ? 1 : 0,
+                                            selectedPeriod !== "all" ? 1 : 0].reduce((a, b) => a + b, 0)} active
+                                        </Badge>
+                                    )}
                                 </div>
-
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium text-gray-700">
-                                        Region
-                                    </label>
-                                    <Select value={selectedRegion} onValueChange={setSelectedRegion}>
-                                        <SelectTrigger className="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
-                                            <SelectValue placeholder="Select region" />
-                                        </SelectTrigger>
-                                        <SelectContent>
-                                            <SelectItem value="all">All Regions</SelectItem>
-                                            {regions.map((region) => (
-                                                <SelectItem key={region} value={region}>
-                                                    {region}
-                                                </SelectItem>
-                                            ))}
-                                        </SelectContent>
-                                    </Select>
-                                </div>
-
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium text-gray-700">
-                                        Country
-                                    </label>
-                                    <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-                                        <SelectTrigger className="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
-                                            <SelectValue placeholder="Select country" />
-                                        </SelectTrigger>
-                                        <SelectContent>
-                                            <SelectItem value="all">All Countries</SelectItem>
-                                            {countries.map((country) => (
-                                                <SelectItem key={country} value={country}>
-                                                    {country}
-                                                </SelectItem>
-                                            ))}
-                                        </SelectContent>
-                                    </Select>
-                                </div>
-
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium text-gray-700">
-                                        Thematic Area
-                                    </label>
-                                    <Select value={selectedTheme} onValueChange={setSelectedTheme}>
-                                        <SelectTrigger className="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
-                                            <SelectValue placeholder="Select theme" />
-                                        </SelectTrigger>
-                                        <SelectContent>
-                                            <SelectItem value="all">All Themes</SelectItem>
-                                            {themes.map((theme) => (
-                                                <SelectItem key={theme} value={theme}>
-                                                    {theme}
-                                                </SelectItem>
-                                            ))}
-                                        </SelectContent>
-                                    </Select>
-                                </div>
-
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium text-gray-700">
-                                        Period
-                                    </label>
-                                    <Select value={selectedPeriod} onValueChange={setSelectedPeriod}>
-                                        <SelectTrigger className="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
-                                            <SelectValue placeholder="Select period" />
-                                        </SelectTrigger>
-                                        <SelectContent>
-                                            <SelectItem value="all">All Periods</SelectItem>
-                                            {periods.map((period) => (
-                                                <SelectItem key={period} value={period}>
-                                                    {period}
-                                                </SelectItem>
-                                            ))}
-                                        </SelectContent>
-                                    </Select>
+                                <div className="flex gap-2">
+                                    {hasActiveFilters && (
+                                        <Button
+                                            variant="outline"
+                                            size="sm"
+                                            onClick={clearFilters}
+                                            className="hover:bg-red-50 hover:text-red-600 hover:border-red-300"
+                                        >
+                                            <X className="h-4 w-4 mr-1" />
+                                            Clear
+                                        </Button>
+                                    )}
+                                    <Button
+                                        variant="outline"
+                                        size="sm"
+                                        onClick={() => setShowFilters(!showFilters)}
+                                    >
+                                        {showFilters ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                                    </Button>
                                 </div>
                             </div>
-                        </CardContent>
+                        </CardHeader>
+                        {showFilters && (
+                            <CardContent className="pt-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-semibold text-gray-700 flex items-center gap-1">
+                                            <Search className="h-4 w-4" />
+                                            Search Projects
+                                        </label>
+                                        <Input
+                                            placeholder="Search by title, country, or funder..."
+                                            value={searchQuery}
+                                            onChange={(e) => setSearchQuery(e.target.value)}
+                                            className="w-full border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
+                                        />
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-semibold text-gray-700">
+                                            Region
+                                        </label>
+                                        <Select value={selectedRegion} onValueChange={setSelectedRegion}>
+                                            <SelectTrigger className="border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+                                                <SelectValue placeholder="Select region" />
+                                            </SelectTrigger>
+                                            <SelectContent>
+                                                <SelectItem value="all">All Regions</SelectItem>
+                                                {regions.map((region) => (
+                                                    <SelectItem key={region} value={region}>
+                                                        {region}
+                                                    </SelectItem>
+                                                ))}
+                                            </SelectContent>
+                                        </Select>
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-semibold text-gray-700">
+                                            Country
+                                        </label>
+                                        <Select value={selectedCountry} onValueChange={setSelectedCountry}>
+                                            <SelectTrigger className="border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+                                                <SelectValue placeholder="Select country" />
+                                            </SelectTrigger>
+                                            <SelectContent>
+                                                <SelectItem value="all">All Countries</SelectItem>
+                                                {countries.map((country) => (
+                                                    <SelectItem key={country} value={country}>
+                                                        {country}
+                                                    </SelectItem>
+                                                ))}
+                                            </SelectContent>
+                                        </Select>
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-semibold text-gray-700">
+                                            Thematic Area
+                                        </label>
+                                        <Select value={selectedTheme} onValueChange={setSelectedTheme}>
+                                            <SelectTrigger className="border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+                                                <SelectValue placeholder="Select theme" />
+                                            </SelectTrigger>
+                                            <SelectContent>
+                                                <SelectItem value="all">All Themes</SelectItem>
+                                                {themes.map((theme) => (
+                                                    <SelectItem key={theme} value={theme}>
+                                                        {theme}
+                                                    </SelectItem>
+                                                ))}
+                                            </SelectContent>
+                                        </Select>
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-semibold text-gray-700">
+                                            Period
+                                        </label>
+                                        <Select value={selectedPeriod} onValueChange={setSelectedPeriod}>
+                                            <SelectTrigger className="border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+                                                <SelectValue placeholder="Select period" />
+                                            </SelectTrigger>
+                                            <SelectContent>
+                                                <SelectItem value="all">All Periods</SelectItem>
+                                                {periods.map((period) => (
+                                                    <SelectItem key={period} value={period}>
+                                                        {period}
+                                                    </SelectItem>
+                                                ))}
+                                            </SelectContent>
+                                        </Select>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        )}
                     </Card>
 
                     {/* Map Section */}
                     {isClient && (
-                        <Card className="bg-white shadow-lg mb-8 border-0">
-                            <CardHeader className="pb-4">
-                                <CardTitle className="text-xl font-semibold text-gray-900">Project Locations</CardTitle>
-                                <p className="text-sm text-gray-600 mt-1">
-                                    {filteredProjects.length} project(s) found • {statistics.uniqueCountries} countr{statistics.uniqueCountries !== 1 ? 'ies' : 'y'}
-                                </p>
+                        <Card className="bg-white shadow-xl mb-8 border-0 overflow-hidden">
+                            <CardHeader className="pb-4 bg-gradient-to-r from-blue-50 to-green-50 border-b">
+                                <div className="flex items-center justify-between">
+                                    <div>
+                                        <CardTitle className="text-xl font-bold text-gray-900 flex items-center gap-2">
+                                            <MapPin className="h-5 w-5 text-blue-600" />
+                                            Interactive Project Map
+                                        </CardTitle>
+                                        <p className="text-sm text-gray-600 mt-1">
+                                            {filteredProjects.length} project(s) • {statistics.uniqueCountries} countr{statistics.uniqueCountries !== 1 ? 'ies' : 'y'}
+                                        </p>
+                                    </div>
+                                </div>
                             </CardHeader>
                             <CardContent className="p-0">
                                 <Suspense fallback={<MapLoader />}>
-                                    <ClimateMap projects={filteredProjects} />
+                                    <ClimateMap projects={filteredProjects} hoveredProject={hoveredProject} />
                                 </Suspense>
                             </CardContent>
                         </Card>
                     )}
 
                     {/* Projects List */}
-                    <Card className="bg-white shadow-lg mb-8 border-0">
-                        <CardHeader className="pb-4">
-                            <CardTitle className="text-xl font-semibold text-gray-900">Projects</CardTitle>
+                    <Card className="bg-white shadow-xl mb-8 border-0">
+                        <CardHeader className="pb-4 bg-gradient-to-r from-blue-50 to-green-50 border-b">
+                            <div className="flex items-center justify-between">
+                                <CardTitle className="text-xl font-bold text-gray-900">
+                                    {showTable ? "Projects Table View" : "Projects List View"}
+                                </CardTitle>
+                                <Button
+                                    variant="outline"
+                                    onClick={() => setShowTable(!showTable)}
+                                    className="hover:bg-blue-50"
+                                >
+                                    {showTable ? (
+                                        <>
+                                            <ChevronUp className="h-4 w-4 mr-2" />
+                                            Hide Table
+                                        </>
+                                    ) : (
+                                        <>
+                                            <ChevronDown className="h-4 w-4 mr-2" />
+                                            Show Table
+                                        </>
+                                    )}
+                                </Button>
+                            </div>
                         </CardHeader>
-                        <CardContent>
-                            {renderProjects()}
-                        </CardContent>
+                        {showTable && (
+                            <CardContent className="pt-6">
+                                {renderProjects()}
+                            </CardContent>
+                        )}
                     </Card>
                 </div>
             </div>
             <LamaFooter />
+
+            <style jsx>{`
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(10px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                .animate-fadeIn {
+                    animation: fadeIn 0.5s ease-out;
+                }
+            `}</style>
         </>
     );
 }

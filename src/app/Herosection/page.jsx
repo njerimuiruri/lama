@@ -161,7 +161,7 @@ const LAMAHeroSection = () => {
                                 </button>
                             </Link>
 
-                            <Link href="/dashboard" className="group">
+                            <Link href="/dashboard/sitedashboard" className="group">
                                 <button className="bg-white border-2 border-green-500 hover:bg-green-50 text-green-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3">
                                     <BarChart3 className="w-5 h-5" />
                                     View Dashboard
