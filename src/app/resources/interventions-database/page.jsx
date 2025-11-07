@@ -567,7 +567,6 @@ export default function ClimateAdaptationDashboard() {
                         </Card>
                     )}
 
-                    {/* Projects List */}
                     <Card className="bg-white shadow-xl mb-8 border-0">
                         <CardHeader className="pb-4 bg-gradient-to-r from-blue-50 to-green-50 border-b">
                             <div className="flex items-center justify-between">
