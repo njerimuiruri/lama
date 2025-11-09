@@ -57,7 +57,7 @@ const LamaNavbar = () => {
     {
       name: "Components",
       icon: <Target className="w-4 h-4" />,
-      href: "/dashboard",
+      href: "/dashboard/sitedashboard",
       subItems: [
         // {
         //   name: "Test",
@@ -84,7 +84,7 @@ const LamaNavbar = () => {
     {
       name: "Indicators",
       icon: <Database className="w-4 h-4" />,
-      href: "/indicators",
+      href: "/indicators/Global_Goal_on_Adaptation",
       subItems: [
         {
           name: "Global Goal on Adaptation ",
@@ -110,7 +110,7 @@ const LamaNavbar = () => {
     {
       name: "Stakeholders",
       icon: <Users className="w-4 h-4" />,
-      href: "/stakeholders",
+      href: "/resources/advisory_outputs",
       subItems: [
         { name: "Stakeholder Directory", href: "/resources/advisory_outputs" },
         {
