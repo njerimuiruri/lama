@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useMemo } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup, useMap } from 'react-leaflet';
+import Image from 'next/image';
 import { Globe, DollarSign, MapPin, TrendingUp, ArrowRight, Info, Shield, Eye, Layers, Award, Target, Users, BookOpen, Sparkles, CheckCircle2 } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
 
@@ -229,10 +230,13 @@ const AfricaMapSection = ({ projects = [] }) => {
                                 {/* Image Section with Overlay */}
                                 <div className="relative h-full min-h-[400px] lg:min-h-[600px]">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#0d9c5a]/20 via-emerald-600/10 to-transparent z-10"></div>
-                                    <img
+                                    <Image
                                         src="/images/fgd1.jpg"
                                         alt="LAMA Community Engagement"
-                                        className="absolute inset-0 w-full h-full object-cover"
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 1024px) 100vw, 50vw"
+                                        priority
                                     />
 
                                     {/* Learn More Button Overlay */}
@@ -355,7 +359,7 @@ const AfricaMapSection = ({ projects = [] }) => {
                                 <span className="text-[#0d9c5a] text-sm font-semibold">Interactive Visualization</span>
                             </div>
                             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
-                                Africa's Climate <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0d9c5a] to-emerald-600">Resilience Map</span>
+                                Africa&apos;s Climate <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0d9c5a] to-emerald-600">Resilience Map</span>
                             </h2>
                             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                                 Explore adaptation projects across the continent. Hover over markers for detailed country insights.

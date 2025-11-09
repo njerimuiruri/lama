@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronRight, Search, Layers, AlertCircle, Loader, ArrowLeft, X, Filter, Grid3x3, List } from 'lucide-react';
 import LamaNavbar from '@/components/Navbar/navbar';
 import LamaFooter from '@/components/Footer/footer';
@@ -13,11 +13,7 @@ export default function ClimateIndicatorsExplorer() {
     const [searchTerm, setSearchTerm] = useState('');
     const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
 
-    useEffect(() => {
-        loadData();
-    }, []);
-
-    const loadData = async () => {
+    const loadData = useCallback(async () => {
         try {
             const response = await fetch('/documents/indicators.json');
             if (!response.ok) throw new Error('Failed to load indicators.json');
@@ -30,7 +26,11 @@ export default function ClimateIndicatorsExplorer() {
             setError(err.message);
             setLoading(false);
         }
-    };
+    }, []);
+
+    useEffect(() => {
+        loadData();
+    }, [loadData]);
 
     const groupBySectors = (rawData) => {
         const sectorsMap = {};
@@ -297,7 +297,7 @@ export default function ClimateIndicatorsExplorer() {
                                 <div className="col-span-full bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-16 text-center border-2 border-dashed border-gray-200">
                                     <Search className="w-20 h-20 text-gray-300 mx-auto mb-6" />
                                     <h3 className="text-2xl font-bold text-gray-700 mb-2">No results found</h3>
-                                    <p className="text-gray-500 text-lg">Try searching for <strong className="text-emerald-600">"{searchTerm}"</strong> with different keywords</p>
+                                    <p className="text-gray-500 text-lg">Try searching for <strong className="text-emerald-600">&ldquo;{searchTerm}&rdquo;</strong> with different keywords</p>
                                 </div>
                             ) : (
                                 filteredData?.map((sector) => (
@@ -489,13 +489,6 @@ export default function ClimateIndicatorsExplorer() {
       `}</style>
             </div>
             <LamaFooter />
-
-
-
         </>
-
-
-
-
     );
 }
