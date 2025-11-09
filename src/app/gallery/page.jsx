@@ -161,22 +161,20 @@ const GalleryPage = () => {
                 <div className="flex gap-4 justify-center">
                   <Button
                     onClick={() => setActiveSection("pictures")}
-                    className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                      activeSection === "pictures"
-                        ? "bg-green-600 text-white shadow-lg transform scale-105"
-                        : "bg-white text-gray-600 hover:bg-green-50 hover:text-green-700 border border-gray-200 hover:border-green-200"
-                    }`}
+                    className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${activeSection === "pictures"
+                      ? "bg-green-600 text-white shadow-lg transform scale-105"
+                      : "bg-white text-gray-600 hover:bg-green-50 hover:text-green-700 border border-gray-200 hover:border-green-200"
+                      }`}
                   >
                     <ImageIcon className="w-5 h-5" />
                     <span>Pictures ({pictures.length})</span>
                   </Button>
                   <Button
                     onClick={() => setActiveSection("videos")}
-                    className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                      activeSection === "videos"
-                        ? "bg-green-600 text-white shadow-lg transform scale-105"
-                        : "bg-white text-gray-600 hover:bg-green-50 hover:text-green-700 border border-gray-200 hover:border-green-200"
-                    }`}
+                    className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${activeSection === "videos"
+                      ? "bg-green-600 text-white shadow-lg transform scale-105"
+                      : "bg-white text-gray-600 hover:bg-green-50 hover:text-green-700 border border-gray-200 hover:border-green-200"
+                      }`}
                   >
                     <Video className="w-5 h-5" />
                     <span>Videos ({videos.length})</span>

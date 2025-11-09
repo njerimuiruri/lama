@@ -77,23 +77,23 @@ const LamaNavbar = () => {
           href: "/resources/tools-frameworks",
           description: "Guides, documents, data",
         },
-        { name: "Stakeholder Directory", href: "/stakeholders/directory" },
-        { name: "Impact Stories", href: "/dashboard/impact-stories" },
+        // { name: "Stakeholder Directory", href: "/stakeholders/directory" },
+        // { name: "Impact Stories", href: "/dashboard/impact-stories" },
       ],
     },
     {
-      name: "Resources",
+      name: "Indicators",
       icon: <Database className="w-4 h-4" />,
-      href: "/resources",
+      href: "/indicators",
       subItems: [
         {
-          name: "LLA Interventions Database",
-          href: "/resources/interventions-database",
+          name: "Global Goal on Adaptation ",
+          href: "/indicators/Global_Goal_on_Adaptation",
           description: "Projects & lessons learned",
         },
         {
-          name: "Tools & Frameworks",
-          href: "/resources/tools-frameworks",
+          name: "County Climate Change Adaptation",
+          href: "/indicators/County_Climate_Change_Adaptation",
           description: "Guides, documents, data",
         },
         // {
@@ -112,7 +112,7 @@ const LamaNavbar = () => {
       icon: <Users className="w-4 h-4" />,
       href: "/stakeholders",
       subItems: [
-        { name: "Stakeholder Directory", href: "/stakeholders/directory" },
+        { name: "Stakeholder Directory", href: "/resources/advisory_outputs" },
         {
           name: "LAMA Diaries & Blogs",
           href: "/stakeholders/diaries-blogs",

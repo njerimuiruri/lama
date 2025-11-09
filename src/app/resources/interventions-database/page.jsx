@@ -19,10 +19,11 @@ import {
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Globe, DollarSign, MapPin, Activity, ChevronDown, ChevronUp, Search, Filter, X } from "lucide-react";
+import { Globe, DollarSign, MapPin, Activity, ChevronDown, ChevronUp, Search, Filter, X, Table as TableIcon, List } from "lucide-react";
 import projectsData from "../../../../data/data/projects.json";
 import LamaNavbar from "@/components/Navbar/navbar";
 import LamaFooter from "@/components/Footer/footer";
+import AfricaMapSection from "@/components/AfricaMapSection";
 
 // Lazy load the ClimateMap component
 const ClimateMap = lazy(() => import("@/components/ClimateMap"));
@@ -47,6 +48,7 @@ export default function ClimateAdaptationDashboard() {
     const [showTable, setShowTable] = useState(false);
     const [showFilters, setShowFilters] = useState(true);
     const [hoveredProject, setHoveredProject] = useState(null);
+    const [viewMode, setViewMode] = useState("list"); // "list" or "table"
 
     const projects = projectsData;
 
@@ -149,7 +151,7 @@ export default function ClimateAdaptationDashboard() {
     const hasActiveFilters = searchQuery || selectedCountry !== "all" || selectedTheme !== "all" ||
         selectedRegion !== "all" || selectedPeriod !== "all";
 
-    const renderProjects = () => {
+    const renderListView = () => {
         if (selectedPeriod === "all") {
             const filteredCountries = countries.filter(country =>
                 projectsByCountry[country]?.some(project =>
@@ -261,83 +263,111 @@ export default function ClimateAdaptationDashboard() {
                 );
             });
         } else {
+            return renderTableView();
+        }
+    };
+
+    const renderTableView = () => {
+        if (filteredProjects.length === 0) {
             return (
-                <div className="overflow-x-auto">
-                    <Table>
-                        <TableHeader>
-                            <TableRow className="bg-gray-50">
-                                <TableHead className="font-semibold">Project</TableHead>
-                                <TableHead className="font-semibold">Region</TableHead>
-                                <TableHead className="font-semibold">Country</TableHead>
-                                <TableHead className="font-semibold">Theme</TableHead>
-                                <TableHead className="font-semibold">Funders</TableHead>
-                                <TableHead className="text-right font-semibold">Amount</TableHead>
-                                <TableHead className="font-semibold">Period</TableHead>
-                                <TableHead className="font-semibold">Status</TableHead>
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                            {filteredProjects.map((project, index) => (
-                                <TableRow
-                                    key={index}
-                                    className="hover:bg-blue-50 transition-colors duration-200"
-                                    onMouseEnter={() => setHoveredProject(project)}
-                                    onMouseLeave={() => setHoveredProject(null)}
-                                >
-                                    <TableCell className="font-medium max-w-md py-4">
-                                        <div className="space-y-1">
-                                            <p className="font-semibold text-gray-900 text-sm">
-                                                {project["Adaptation Interventions"]}
-                                            </p>
-                                            <p className="text-xs text-gray-500 italic">
-                                                {project.Instruments && project.Instruments !== "none"
-                                                    ? project.Instruments
-                                                    : "No specific instrument"}
-                                            </p>
-                                        </div>
-                                    </TableCell>
-                                    <TableCell className="py-4">
-                                        <span className="text-sm text-gray-700">{project["Region"]}</span>
-                                    </TableCell>
-                                    <TableCell className="py-4">
-                                        <span className="font-medium text-gray-900">{project["Country"]}</span>
-                                    </TableCell>
-                                    <TableCell className="py-4">
-                                        <Badge
-                                            variant="secondary"
-                                            className="bg-blue-100 text-blue-800 hover:bg-blue-200 border-0 text-xs"
-                                        >
-                                            {project["Thematic Area(s)"]}
-                                        </Badge>
-                                    </TableCell>
-                                    <TableCell className="py-4">
-                                        <span className="text-sm text-gray-600">{project["Funders"]}</span>
-                                    </TableCell>
-                                    <TableCell className="text-right py-4">
-                                        <span className="font-semibold text-gray-900">
-                                            ${parseFloat(project["Project Amount ($ Million)"]).toLocaleString()}M
-                                        </span>
-                                    </TableCell>
-                                    <TableCell className="py-4">
-                                        <span className="text-sm text-gray-700">{project["Period"]}</span>
-                                    </TableCell>
-                                    <TableCell className="py-4">
-                                        <Badge className={`
-                                            ${project["Implementation Status"] === "Under Implementation"
-                                                ? "bg-green-100 text-green-800 hover:bg-green-200"
-                                                : "bg-yellow-100 text-yellow-800 hover:bg-yellow-200"
-                                            } border-0 text-xs font-medium
-                                        `}>
-                                            {project["Implementation Status"]}
-                                        </Badge>
-                                    </TableCell>
-                                </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
+                <div className="text-center py-16 text-gray-500">
+                    <div className="flex flex-col items-center justify-center space-y-4">
+                        <Activity className="h-16 w-16 text-gray-300" />
+                        <p className="text-xl font-semibold text-gray-400">No projects found</p>
+                        <p className="text-sm text-gray-500">
+                            Try adjusting your search criteria or filters
+                        </p>
+                        {hasActiveFilters && (
+                            <Button
+                                variant="outline"
+                                onClick={clearFilters}
+                                className="mt-4"
+                            >
+                                <X className="h-4 w-4 mr-2" />
+                                Clear all filters
+                            </Button>
+                        )}
+                    </div>
                 </div>
             );
         }
+
+        return (
+            <div className="overflow-x-auto">
+                <Table>
+                    <TableHeader>
+                        <TableRow className="bg-gray-50">
+                            <TableHead className="font-semibold">Project</TableHead>
+                            <TableHead className="font-semibold">Region</TableHead>
+                            <TableHead className="font-semibold">Country</TableHead>
+                            <TableHead className="font-semibold">Theme</TableHead>
+                            <TableHead className="font-semibold">Funders</TableHead>
+                            <TableHead className="text-right font-semibold">Amount</TableHead>
+                            <TableHead className="font-semibold">Period</TableHead>
+                            <TableHead className="font-semibold">Status</TableHead>
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                        {filteredProjects.map((project, index) => (
+                            <TableRow
+                                key={index}
+                                className="hover:bg-blue-50 transition-colors duration-200"
+                                onMouseEnter={() => setHoveredProject(project)}
+                                onMouseLeave={() => setHoveredProject(null)}
+                            >
+                                <TableCell className="font-medium max-w-md py-4">
+                                    <div className="space-y-1">
+                                        <p className="font-semibold text-gray-900 text-sm">
+                                            {project["Adaptation Interventions"]}
+                                        </p>
+                                        <p className="text-xs text-gray-500 italic">
+                                            {project.Instruments && project.Instruments !== "none"
+                                                ? project.Instruments
+                                                : "No specific instrument"}
+                                        </p>
+                                    </div>
+                                </TableCell>
+                                <TableCell className="py-4">
+                                    <span className="text-sm text-gray-700">{project["Region"]}</span>
+                                </TableCell>
+                                <TableCell className="py-4">
+                                    <span className="font-medium text-gray-900">{project["Country"]}</span>
+                                </TableCell>
+                                <TableCell className="py-4">
+                                    <Badge
+                                        variant="secondary"
+                                        className="bg-blue-100 text-blue-800 hover:bg-blue-200 border-0 text-xs"
+                                    >
+                                        {project["Thematic Area(s)"]}
+                                    </Badge>
+                                </TableCell>
+                                <TableCell className="py-4">
+                                    <span className="text-sm text-gray-600">{project["Funders"]}</span>
+                                </TableCell>
+                                <TableCell className="text-right py-4">
+                                    <span className="font-semibold text-gray-900">
+                                        ${parseFloat(project["Project Amount ($ Million)"]).toLocaleString()}M
+                                    </span>
+                                </TableCell>
+                                <TableCell className="py-4">
+                                    <span className="text-sm text-gray-700">{project["Period"]}</span>
+                                </TableCell>
+                                <TableCell className="py-4">
+                                    <Badge className={`
+                                        ${project["Implementation Status"] === "Under Implementation"
+                                            ? "bg-green-100 text-green-800 hover:bg-green-200"
+                                            : "bg-yellow-100 text-yellow-800 hover:bg-yellow-200"
+                                        } border-0 text-xs font-medium
+                                    `}>
+                                        {project["Implementation Status"]}
+                                    </Badge>
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </div>
+        );
     };
 
     return (
@@ -414,7 +444,7 @@ export default function ClimateAdaptationDashboard() {
                             <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-2">
                                     <Filter className="h-5 w-5 text-blue-600" />
-                                    <CardTitle className="text-xl font-bold text-gray-900">Filter Projects</CardTitle>
+                                    <CardTitle className="text-xl font-bold text-gray-900">Search & Filter Projects</CardTitle>
                                     {hasActiveFilters && (
                                         <Badge variant="secondary" className="bg-blue-100 text-blue-700">
                                             {[searchQuery ? 1 : 0,
@@ -543,6 +573,7 @@ export default function ClimateAdaptationDashboard() {
                         )}
                     </Card>
 
+                    {/* Interactive Map */}
                     {isClient && (
                         <Card className="bg-white shadow-xl mb-8 border-0 overflow-hidden">
                             <CardHeader className="pb-4 bg-gradient-to-r from-blue-50 to-green-50 border-b">
@@ -558,7 +589,7 @@ export default function ClimateAdaptationDashboard() {
                                     </div>
                                 </div>
                             </CardHeader>
-                            <CardContent className="p-0">
+                            <CardContent className="p-6">
                                 <Suspense fallback={<MapLoader />}>
                                     <ClimateMap projects={filteredProjects} hoveredProject={hoveredProject} />
                                 </Suspense>
@@ -566,34 +597,61 @@ export default function ClimateAdaptationDashboard() {
                         </Card>
                     )}
 
+                    {/* Projects Display with View Toggle */}
                     <Card className="bg-white shadow-xl mb-8 border-0">
                         <CardHeader className="pb-4 bg-gradient-to-r from-blue-50 to-green-50 border-b">
-                            <div className="flex items-center justify-between">
-                                <CardTitle className="text-xl font-bold text-gray-900">
-                                    {showTable ? "Projects Table View" : "Projects List View"}
-                                </CardTitle>
-                                <Button
-                                    variant="outline"
-                                    onClick={() => setShowTable(!showTable)}
-                                    className="hover:bg-blue-50"
-                                >
-                                    {showTable ? (
-                                        <>
-                                            <ChevronUp className="h-4 w-4 mr-2" />
-                                            Hide Table
-                                        </>
-                                    ) : (
-                                        <>
-                                            <ChevronDown className="h-4 w-4 mr-2" />
-                                            Show Table
-                                        </>
-                                    )}
-                                </Button>
+                            <div className="flex items-center justify-between flex-wrap gap-4">
+                                <div className="flex items-center gap-3">
+                                    <CardTitle className="text-xl font-bold text-gray-900">
+                                        Projects {viewMode === "table" ? "Table" : "List"}
+                                    </CardTitle>
+                                    <Badge variant="secondary" className="bg-blue-100 text-blue-700">
+                                        {filteredProjects.length} {filteredProjects.length === 1 ? 'project' : 'projects'}
+                                    </Badge>
+                                </div>
+                                <div className="flex gap-2">
+                                    <Button
+                                        variant={viewMode === "list" ? "default" : "outline"}
+                                        onClick={() => setViewMode("list")}
+                                        className="hover:bg-blue-50"
+                                        size="sm"
+                                    >
+                                        <List className="h-4 w-4 mr-2" />
+                                        List
+                                    </Button>
+                                    <Button
+                                        variant={viewMode === "table" ? "default" : "outline"}
+                                        onClick={() => setViewMode("table")}
+                                        className="hover:bg-blue-50"
+                                        size="sm"
+                                    >
+                                        <TableIcon className="h-4 w-4 mr-2" />
+                                        Table
+                                    </Button>
+                                    <Button
+                                        variant="outline"
+                                        onClick={() => setShowTable(!showTable)}
+                                        className="hover:bg-blue-50"
+                                        size="sm"
+                                    >
+                                        {showTable ? (
+                                            <>
+                                                <ChevronUp className="h-4 w-4 mr-2" />
+                                                Hide Projects
+                                            </>
+                                        ) : (
+                                            <>
+                                                <ChevronDown className="h-4 w-4 mr-2" />
+                                                Show Projects
+                                            </>
+                                        )}
+                                    </Button>
+                                </div>
                             </div>
                         </CardHeader>
                         {showTable && (
                             <CardContent className="pt-6">
-                                {renderProjects()}
+                                {viewMode === "list" ? renderListView() : renderTableView()}
                             </CardContent>
                         )}
                     </Card>
