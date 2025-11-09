@@ -2,10 +2,21 @@
 'use client';
 import React, { useState, useEffect, useMemo } from 'react';
 import { ArrowRight, Globe, MapPin, Layers, TrendingUp, Database, Loader, ChevronRight, Sparkles } from 'lucide-react';
-import AfricaMapSection from '@/components/AfricaMapSection';
+import dynamic from 'next/dynamic';
 import projectsData from '../../../data/data/projects.json';
-import LamaNavbar from '@/components/Navbar/navbar';
-import LamaFooter from '@/components/Footer/footer';
+
+// Dynamically import AfricaMapSection with no SSR
+const AfricaMapSection = dynamic(() => import('@/components/AfricaMapSection'), {
+    ssr: false,
+    loading: () => (
+        <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 flex items-center justify-center">
+            <div className="text-center">
+                <Loader className="w-12 h-12 text-emerald-600 animate-spin mx-auto mb-4" />
+                <p className="text-gray-600">Loading map...</p>
+            </div>
+        </div>
+    )
+});
 
 const DataPlatformsSection = () => {
     const [countyData, setCountyData] = useState([]);

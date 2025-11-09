@@ -1,5 +1,6 @@
 'use client';
 import { useState, useMemo, lazy, Suspense, useEffect } from "react";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import {
@@ -23,10 +24,12 @@ import { Globe, DollarSign, MapPin, Activity, ChevronDown, ChevronUp, Search, Fi
 import projectsData from "../../../../data/data/projects.json";
 import LamaNavbar from "@/components/Navbar/navbar";
 import LamaFooter from "@/components/Footer/footer";
-import AfricaMapSection from "@/components/AfricaMapSection";
 
-// Lazy load the ClimateMap component
-const ClimateMap = lazy(() => import("@/components/ClimateMap"));
+// Dynamically import components with no SSR
+const ClimateMap = dynamic(() => import("@/components/ClimateMap"), {
+    ssr: false,
+    loading: () => <MapLoader />
+});
 
 // Loading component for the map
 const MapLoader = () => (
@@ -590,9 +593,7 @@ export default function ClimateAdaptationDashboard() {
                                 </div>
                             </CardHeader>
                             <CardContent className="p-6">
-                                <Suspense fallback={<MapLoader />}>
-                                    <ClimateMap projects={filteredProjects} hoveredProject={hoveredProject} />
-                                </Suspense>
+                                <ClimateMap projects={filteredProjects} hoveredProject={hoveredProject} />
                             </CardContent>
                         </Card>
                     )}
