@@ -19,7 +19,7 @@ export default function NCCAPExplorer() {
 
     const loadData = async () => {
         try {
-            const response = await fetch('/documents/nccap.json');
+            const response = await fetch('/documents/NCCAP.json');
             if (!response.ok) throw new Error('Failed to load NCCAP data');
 
             const jsonData = await response.json();
