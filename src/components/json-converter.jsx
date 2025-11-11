@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import * as XLSX from 'xlsx';
 import { Download, Upload, FileSpreadsheet, CheckCircle } from 'lucide-react';
@@ -26,17 +27,26 @@ export default function ExcelToJsonConverter() {
                 // Convert to JSON with header row
                 const json = XLSX.utils.sheet_to_json(worksheet, {
                     raw: false,
-                    defval: ''
+                    defval: '',
+                    header: 1 // Get all rows as arrays first
                 });
 
+                // Get headers from first row
+                const headers = json[0];
+                const dataRows = json.slice(1);
+
+                // Find column indices
+                const sourceIdx = headers.findIndex(h => h && h.toString().toLowerCase().includes('source'));
+                const priorityIdx = headers.findIndex(h => h && h.toString().toLowerCase().includes('priority'));
+                const kpiIdx = headers.findIndex(h => h && h.toString().toLowerCase().includes('key performance'));
+                const sectorIdx = headers.findIndex(h => h && h.toString().toLowerCase().includes('sector') && !h.toString().toLowerCase().includes('priority'));
+
                 // Map the data to match your column structure
-                const formattedData = json.map(row => ({
-                    Organisations: row.Organisations || row.A || '',
-                    Source: row.Source || row.B || '',
-                    StrategicSector: row['Strategic Sector'] || row.C || '',
-                    Activity: row.Activity || row.D || '',
-                    Indicators: row.Indicators || row.E || '',
-                    Sector: row.Sector || row.G || ''
+                const formattedData = dataRows.map(row => ({
+                    Source: row[sourceIdx] || '',
+                    PrioritySector: row[priorityIdx] || '',
+                    KeyPerformanceIndicators: row[kpiIdx] || '',
+                    Sector: row[sectorIdx] || ''
                 }));
 
                 setJsonData(formattedData);
@@ -163,7 +173,7 @@ export default function ExcelToJsonConverter() {
                             Expected Columns:
                         </h3>
                         <div className="flex flex-wrap gap-2">
-                            {['Organisations', 'Source', 'Strategic Sector', 'Activity', 'Indicators', 'Sector'].map((col) => (
+                            {['Source', 'Priority Sector', 'Key performance Indicators', 'Sector'].map((col) => (
                                 <span
                                     key={col}
                                     className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm"

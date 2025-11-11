@@ -96,6 +96,16 @@ const LamaNavbar = () => {
           href: "/indicators/County_Climate_Change_Adaptation",
           description: "Guides, documents, data",
         },
+        {
+          name: "County Intergrated Development Plans",
+          href: "/indicators/County_Intergrated_Development_Plans",
+          description: "Guides, documents, data",
+        },
+        {
+          name: "National Climate Change Action Plan",
+          href: "/indicators/National_Climate_Change_Action_Plan",
+          description: "Guides, documents, data",
+        },
         // {
         //   name: "Stakeholder Engagement Directory",
         //   href: "/stakeholders/directory",
