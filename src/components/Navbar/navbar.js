@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
   ChevronDown,
+  ChevronRight,
   Menu,
   X,
   Users,
@@ -25,6 +26,7 @@ const LamaNavbar = () => {
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openSubMenu, setOpenSubMenu] = useState(null);
+  const [openNestedMenu, setOpenNestedMenu] = useState(null);
 
   const getActiveTab = () => {
     if (pathname === "/") return "Home";
@@ -34,6 +36,7 @@ const LamaNavbar = () => {
     if (pathname.startsWith("/stakeholders")) return "Stakeholders";
     if (pathname.startsWith("/activities")) return "Activities";
     if (pathname.startsWith("/gallery")) return "Gallery";
+    if (pathname.startsWith("/indicators")) return "Indicators";
     return "";
   };
 
@@ -53,16 +56,11 @@ const LamaNavbar = () => {
       icon: <GraduationCap className="w-4 h-4" />,
       href: "/programmes",
     },
-
     {
       name: "Components",
       icon: <Target className="w-4 h-4" />,
       href: "/dashboard/sitedashboard",
       subItems: [
-        // {
-        //   name: "Test",
-        //   href: "/dashboard/test",
-        // },
         {
           name: "Interactive dashboard",
           href: "/dashboard/sitedashboard",
@@ -77,43 +75,71 @@ const LamaNavbar = () => {
           href: "/resources/tools-frameworks",
           description: "Guides, documents, data",
         },
-        // { name: "Stakeholder Directory", href: "/stakeholders/directory" },
-        // { name: "Impact Stories", href: "/dashboard/impact-stories" },
       ],
     },
     {
       name: "Indicators",
       icon: <Database className="w-4 h-4" />,
-      href: "/indicators/Global_Goal_on_Adaptation",
+      href: "/indicators",
       subItems: [
         {
-          name: "Global Goal on Adaptation ",
-          href: "/indicators/Global_Goal_on_Adaptation",
-          description: "Projects & lessons learned",
+          name: "LLA Indicators",
+          href: "/indicators/Lama-indicator",
+          description: "Locally-led adaptation metrics",
+          isCategory: true,
         },
         {
-          name: "County Climate Change Adaptation",
-          href: "/indicators/County_Climate_Change_Adaptation",
-          description: "Guides, documents, data",
+          name: "Sub-national",
+          isNested: true,
+          nestedItems: [
+            {
+              name: "County Integrated Development Plans (CIDPs)",
+              href: "/indicators/County_Intergrated_Development_Plans",
+              description: "County-level development frameworks",
+            },
+            {
+              name: "County Climate Change Adaptation Plans (CCAPs)",
+              href: "/indicators/County_Climate_Change_Adaptation",
+              description: "County adaptation strategies",
+            },
+          ],
         },
         {
-          name: "County Intergrated Development Plans",
-          href: "/indicators/County_Intergrated_Development_Plans",
-          description: "Guides, documents, data",
+          name: "National",
+          isNested: true,
+          nestedItems: [
+            {
+              name: "Nationally Determined Contributions (NDCs)",
+              href: "/indicators/National_NDC",
+              description: "National climate commitments",
+            },
+            {
+              name: "National Climate Change Action Plan (NCCAP)",
+              href: "/indicators/National_Climate_Change_Action_Plan",
+              description: "National climate action strategy",
+            },
+            {
+              name: "National Adaptation Plans (NAPs)",
+              href: "/indicators/National_Adaptation_Plans",
+              description: "National adaptation frameworks",
+            },
+          ],
         },
         {
-          name: "National Climate Change Action Plan",
-          href: "/indicators/National_Climate_Change_Action_Plan",
-          description: "Guides, documents, data",
-        },
-        // {
-        //   name: "Stakeholder Engagement Directory",
-        //   href: "/stakeholders/directory",
-        // },
-
-        {
-          name: "Advisory/Expert Group Outputs",
-          href: "/resources/advisory_outputs",
+          name: "Global",
+          isNested: true,
+          nestedItems: [
+            {
+              name: "Global Goal on Adaptation (GGA)",
+              href: "/indicators/Global_Goal_on_Adaptation",
+              description: "International adaptation targets",
+            },
+            {
+              name: "Global Indicators",
+              href: "/indicators/gloabal_indicators",
+              description: "International climate metrics",
+            },
+          ],
         },
       ],
     },
@@ -122,13 +148,15 @@ const LamaNavbar = () => {
       icon: <Users className="w-4 h-4" />,
       href: "/resources/advisory_outputs",
       subItems: [
-        { name: "Stakeholder Directory", href: "/resources/advisory_outputs" },
+        {
+          name: "Advisory/Expert Group Outputs",
+          href: "/resources/advisory_outputs",
+        },
         {
           name: "LAMA Diaries & Blogs",
           href: "/stakeholders/diaries-blogs",
           description: "Voices of women, youth, communities, experts",
         },
-        // { name: "Collaboration Space", href: "/stakeholders/collaboration" },
       ],
     },
     {
@@ -155,10 +183,16 @@ const LamaNavbar = () => {
   const handleTabClick = (tabName) => {
     setMobileMenuOpen(false);
     setOpenSubMenu(null);
+    setOpenNestedMenu(null);
   };
 
   const toggleSubMenu = (itemName) => {
     setOpenSubMenu(openSubMenu === itemName ? null : itemName);
+    setOpenNestedMenu(null);
+  };
+
+  const toggleNestedMenu = (itemName) => {
+    setOpenNestedMenu(openNestedMenu === itemName ? null : itemName);
   };
 
   const activeTab = getActiveTab();
@@ -221,24 +255,77 @@ const LamaNavbar = () => {
                       </button>
 
                       {/* Desktop Dropdown */}
-                      <div className="absolute top-full left-0 mt-1 w-56 xl:w-64 bg-white rounded-lg shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                      <div className="absolute top-full left-0 mt-1 w-72 xl:w-80 bg-white rounded-lg shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                         <div className="p-2 xl:p-3">
                           <div className="space-y-1">
                             {item.subItems.map((subItem) => (
-                              <Link
-                                key={subItem.name}
-                                href={subItem.href}
-                                className="block p-2 xl:p-2.5 rounded-md hover:bg-gray-50 transition-colors duration-150 group/item"
-                              >
-                                <div className="font-medium text-gray-900 text-xs xl:text-sm leading-tight group-hover/item:text-green-700 transition-colors">
-                                  {subItem.name}
-                                </div>
-                                {subItem.description && (
-                                  <div className="text-xs text-gray-500 mt-1 leading-tight">
-                                    {subItem.description}
+                              <div key={subItem.name}>
+                                {subItem.isNested ? (
+                                  <div className="relative group/nested">
+                                    <div className="p-2 xl:p-2.5 rounded-md bg-green-50 hover:bg-green-100 border border-green-200 transition-colors duration-150 cursor-pointer flex items-center justify-between">
+                                      <div>
+                                        <div className="font-semibold text-green-700 text-xs xl:text-sm leading-tight flex items-center gap-1">
+                                          {subItem.name}
+                                          <span className="text-[10px] bg-green-200 text-green-800 px-1.5 py-0.5 rounded">
+                                            hover
+                                          </span>
+                                        </div>
+                                      </div>
+                                      <ChevronRight className="w-4 h-4 text-green-600 animate-pulse group-hover/nested:animate-none" />
+                                    </div>
+
+                                    {/* Nested Dropdown */}
+                                    <div className="absolute left-full top-0 ml-2 w-72 xl:w-80 bg-white rounded-lg shadow-xl border-2 border-green-200 opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 z-50">
+                                      <div className="p-2 xl:p-3 bg-gradient-to-br from-green-50 to-white rounded-lg">
+                                        <div className="space-y-1">
+                                          {subItem.nestedItems.map(
+                                            (nestedItem) => (
+                                              <Link
+                                                key={nestedItem.name}
+                                                href={nestedItem.href}
+                                                className="block p-2 xl:p-2.5 rounded-md bg-white hover:bg-green-50 border border-transparent hover:border-green-200 transition-colors duration-150 group/item shadow-sm"
+                                              >
+                                                <div className="font-medium text-gray-900 text-xs xl:text-sm leading-tight group-hover/item:text-green-700 transition-colors">
+                                                  {nestedItem.name}
+                                                </div>
+                                                {nestedItem.description && (
+                                                  <div className="text-xs text-gray-500 mt-1 leading-tight">
+                                                    {nestedItem.description}
+                                                  </div>
+                                                )}
+                                              </Link>
+                                            )
+                                          )}
+                                        </div>
+                                      </div>
+                                    </div>
                                   </div>
+                                ) : (
+                                  <Link
+                                    href={subItem.href}
+                                    className={`block p-2 xl:p-2.5 rounded-md hover:bg-gray-50 transition-colors duration-150 group/item ${
+                                      subItem.isCategory
+                                        ? "border-l-2 border-green-600"
+                                        : ""
+                                    }`}
+                                  >
+                                    <div
+                                      className={`font-medium text-gray-900 text-xs xl:text-sm leading-tight group-hover/item:text-green-700 transition-colors ${
+                                        subItem.isCategory
+                                          ? "font-semibold text-green-700"
+                                          : ""
+                                      }`}
+                                    >
+                                      {subItem.name}
+                                    </div>
+                                    {subItem.description && (
+                                      <div className="text-xs text-gray-500 mt-1 leading-tight">
+                                        {subItem.description}
+                                      </div>
+                                    )}
+                                  </Link>
                                 )}
-                              </Link>
+                              </div>
                             ))}
                           </div>
                         </div>
@@ -327,19 +414,69 @@ const LamaNavbar = () => {
                 {item.subItems && openSubMenu === item.name && (
                   <div className="pl-6 sm:pl-8 space-y-1 pb-2">
                     {item.subItems.map((subItem) => (
-                      <Link
-                        key={subItem.name}
-                        href={subItem.href}
-                        className="block px-3 sm:px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-150"
-                        onClick={() => handleTabClick(item.name)}
-                      >
-                        <div className="font-medium">{subItem.name}</div>
-                        {subItem.description && (
-                          <div className="text-xs text-gray-500 mt-1">
-                            {subItem.description}
+                      <div key={subItem.name}>
+                        {subItem.isNested ? (
+                          <div>
+                            <button
+                              onClick={() => toggleNestedMenu(subItem.name)}
+                              className="w-full flex items-center justify-between px-3 sm:px-4 py-2.5 text-sm font-semibold text-green-700 bg-green-50 hover:bg-green-100 border border-green-200 rounded-md transition-colors duration-150"
+                            >
+                              <span className="flex items-center gap-2">
+                                {subItem.name}
+                                <span className="text-[10px] bg-green-200 text-green-800 px-1.5 py-0.5 rounded">
+                                  tap
+                                </span>
+                              </span>
+                              <ChevronDown
+                                className={`w-4 h-4 transition-transform ${
+                                  openNestedMenu === subItem.name
+                                    ? "rotate-180"
+                                    : ""
+                                }`}
+                              />
+                            </button>
+
+                            {openNestedMenu === subItem.name && (
+                              <div className="pl-4 space-y-1 mt-1 border-l-2 border-green-300">
+                                {subItem.nestedItems.map((nestedItem) => (
+                                  <Link
+                                    key={nestedItem.name}
+                                    href={nestedItem.href}
+                                    className="block px-3 sm:px-4 py-2 text-sm text-gray-600 hover:text-gray-900 bg-white hover:bg-green-50 border border-transparent hover:border-green-200 rounded-md transition-colors duration-150"
+                                    onClick={() => handleTabClick(item.name)}
+                                  >
+                                    <div className="font-medium">
+                                      {nestedItem.name}
+                                    </div>
+                                    {nestedItem.description && (
+                                      <div className="text-xs text-gray-500 mt-1">
+                                        {nestedItem.description}
+                                      </div>
+                                    )}
+                                  </Link>
+                                ))}
+                              </div>
+                            )}
                           </div>
+                        ) : (
+                          <Link
+                            href={subItem.href}
+                            className={`block px-3 sm:px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-150 ${
+                              subItem.isCategory
+                                ? "border-l-2 border-green-600 font-semibold text-green-700"
+                                : ""
+                            }`}
+                            onClick={() => handleTabClick(item.name)}
+                          >
+                            <div className="font-medium">{subItem.name}</div>
+                            {subItem.description && (
+                              <div className="text-xs text-gray-500 mt-1">
+                                {subItem.description}
+                              </div>
+                            )}
+                          </Link>
                         )}
-                      </Link>
+                      </div>
                     ))}
                   </div>
                 )}
