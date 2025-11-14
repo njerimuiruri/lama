@@ -159,20 +159,20 @@ const LamaNavbar = () => {
         },
       ],
     },
-    {
-      name: "Activities",
-      icon: <Calendar className="w-4 h-4" />,
-      href: "/activities",
-      subItems: [
-        { name: "Webinars", href: "/activities/webinars" },
-        { name: "Workshops", href: "/activities/workshops" },
-        {
-          name: "Events",
-          href: "/activities/events",
-          description: "Platform Launch & more",
-        },
-      ],
-    },
+    // {
+    //   name: "Activities",
+    //   icon: <Calendar className="w-4 h-4" />,
+    //   href: "/activities",
+    //   subItems: [
+    //     { name: "Webinars", href: "/activities/webinars" },
+    //     { name: "Workshops", href: "/activities/workshops" },
+    //     {
+    //       name: "Events",
+    //       href: "/activities/events",
+    //       description: "Platform Launch & more",
+    //     },
+    //   ],
+    // },
     {
       name: "Gallery",
       icon: <Camera className="w-4 h-4" />,

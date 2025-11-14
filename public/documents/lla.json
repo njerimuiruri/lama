@@ -1,0 +1,1940 @@
+{
+  "metadata": {
+    "title": "LAMA Indicator Matrix",
+    "description": "Local Adaptation Monitoring and Assessment Indicators",
+    "generatedAt": "2025-11-14T05:46:44.052Z",
+    "totalIndicators": 240,
+    "thematicSectors": [
+      "Water",
+      "Agriculture & Food Security",
+      "Poverty & Livelihood",
+      "Cultural Heritage & Social Inclusion",
+      "Health",
+      "Infrastructure & Human Settlements",
+      "Ecosystem & Biodiversity",
+      "Governance and Policy"
+    ]
+  },
+  "indicators": [
+    {
+      "id": 1,
+      "thematicSector": "Water",
+      "rawIndicator": "Increased water access",
+      "ammendedIndicator": "% of households with access to clean and reliable water sources year-round",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": "Water Availability"
+    },
+    {
+      "id": 2,
+      "thematicSector": "Water",
+      "rawIndicator": "Presence of clean water from the community springs",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 3,
+      "thematicSector": "Water",
+      "rawIndicator": "Having rainwater harvesting facilities",
+      "ammendedIndicator": "Number of households with rainwater harvesting facilities (tanks, dams, or pans)",
+      "possibleMeasurementUnit": "Count",
+      "targetRelevance": "Water Accessibility"
+    },
+    {
+      "id": 4,
+      "thematicSector": "Water",
+      "rawIndicator": "Enhanced water conservation and irrigation efficiency",
+      "ammendedIndicator": "% of households benefiting from improved irrigation systems or water management practices",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": "Water Utilization"
+    },
+    {
+      "id": 5,
+      "thematicSector": "Water",
+      "rawIndicator": "Increased water access",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 6,
+      "thematicSector": "Water",
+      "rawIndicator": "Availability of more tanks and dams for irrigation",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 7,
+      "thematicSector": "Water",
+      "rawIndicator": "Climate finance resources for pumping water for irrigation",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 8,
+      "thematicSector": "Water",
+      "rawIndicator": "Promoting sustainable land and water management practices",
+      "ammendedIndicator": "% of households that received training on water conservation techniques",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 9,
+      "thematicSector": "Water",
+      "rawIndicator": "Enhanced water conservation and irrigation efficiency",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 10,
+      "thematicSector": "Water",
+      "rawIndicator": "Promoting sustainable land and water management practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 11,
+      "thematicSector": "Water",
+      "rawIndicator": "Improved water management to protect farms during floods",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 12,
+      "thematicSector": "Water",
+      "rawIndicator": "Have a training on water conservation",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 13,
+      "thematicSector": "Water",
+      "rawIndicator": "Presence of clean water from the community springs",
+      "ammendedIndicator": "Water quality index of community springs",
+      "possibleMeasurementUnit": "Water Quality Index (1-100)",
+      "targetRelevance": "Water Quality"
+    },
+    {
+      "id": 14,
+      "thematicSector": "Water",
+      "rawIndicator": "Availability of dams in the community constructed by the national government",
+      "ammendedIndicator": "Existence of community dams or water reservoirs constructed/maintained by local/national government",
+      "possibleMeasurementUnit": "Binary (Yes/No)",
+      "targetRelevance": "Water Accessibility"
+    },
+    {
+      "id": 15,
+      "thematicSector": "Water",
+      "rawIndicator": "Availability of more tanks and dams for irrigation",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 16,
+      "thematicSector": "Water",
+      "rawIndicator": "Building of Dams for increased water access",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 17,
+      "thematicSector": "Water",
+      "rawIndicator": "Improved management of excessive water in farms",
+      "ammendedIndicator": "% of households reporting improved water drainage to prevent flooding of farmlands",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": "Water Quality"
+    },
+    {
+      "id": 18,
+      "thematicSector": "Water",
+      "rawIndicator": "Improved water management to protect farms during floods",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 19,
+      "thematicSector": "Water",
+      "rawIndicator": "Improved soil structure through proper drainage systems in waterlogged areas",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 20,
+      "thematicSector": "Water",
+      "rawIndicator": "Encouraged conservation of water catchment areas",
+      "ammendedIndicator": "% of households engaged in water catchment protection or tree planting in riparian zones",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": "Water Availability"
+    },
+    {
+      "id": 21,
+      "thematicSector": "Water",
+      "rawIndicator": "Preservation of natural resources, e.g. rivers and streams",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 22,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Improved maize production",
+      "ammendedIndicator": "Average crop yield per household (e.g., maize bags per acre)",
+      "possibleMeasurementUnit": "Bags/acre",
+      "targetRelevance": "Food production"
+    },
+    {
+      "id": 23,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Increased crop yield stability despite climate variability",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 24,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Improved crop yields",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 25,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Increased quality of crop yields",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 26,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Promotion of drought-tolerant crops",
+      "ammendedIndicator": "% of households using drought/flood-resistant or improved crop varieties",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": "Food production"
+    },
+    {
+      "id": 27,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Promotion of flood-resistant crops",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 28,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Promoted sustainable adaptation",
+      "ammendedIndicator": "% of households trained on soil conservation or climate-smart farming techniques",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": "Food production"
+    },
+    {
+      "id": 29,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Training for farmers on soil conservation techniques",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 30,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Improved knowledge on climate-smart practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 31,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Facilitating training and capacity-building programs",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 32,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Civic education for the best farming practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 33,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Technical skills and experience in sustainable farming or conservation",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 34,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Proper soil management practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 35,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Capacity building for farmers",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 36,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Regular training on climate adaptations for all farmers",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 37,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Training on climate-related issues",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 38,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Training on climate adaptation, especially to women",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 39,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Refresher training to local farmers on climate smart agriculture",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 40,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Presence of healthy soils that need no fertilizer inputs, hence low costs",
+      "ammendedIndicator": "Soil health improvement index",
+      "possibleMeasurementUnit": "Composite score (0-10)",
+      "targetRelevance": "Food production"
+    },
+    {
+      "id": 41,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Improved soil health and fertility",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 42,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Soil fertility improvement",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 43,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Improved soil structure through proper drainage systems in waterlogged areas",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 44,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Encouragement of organic farming for resilient crops in smallholder communities",
+      "ammendedIndicator": "% increase in farm productivity attributed to adoption of organic fertilizers or manure",
+      "possibleMeasurementUnit": "% change",
+      "targetRelevance": "Food production"
+    },
+    {
+      "id": 45,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Reduced dependency on external inputs (e.g., fertilizers, pesticides)",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 46,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Improved crop yields",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 47,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Reduced fertilizer prices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 48,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Improved quality products from my farmlands",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 49,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "More Cow dung and organic forms of farming materials",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 50,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Soil fertility testing services",
+      "ammendedIndicator": "% of households with access to soil testing or advisory services",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": "Food production"
+    },
+    {
+      "id": 51,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Improved soil health and fertility",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 52,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Presence of customers for fish during the rainy and dry seasons",
+      "ammendedIndicator": "% of households engaged in diversified farming (e.g., beekeeping, fish farming, fodder production)",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": "Food production"
+    },
+    {
+      "id": 53,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Planting of grass (fodder) by farmers",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 54,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Alternative farming practices such as beekeeping and planting of bananas",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 55,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Having enough pasture for the animals",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 56,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Diversification of livelihoods",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 57,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Increased crop yield stability despite climate variability",
+      "ammendedIndicator": "% of households reporting stable food availability despite seasonal variability",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": "Food access"
+    },
+    {
+      "id": 58,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Reduced food prices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 59,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Early preparedness and timely planting informed by climate/weather information",
+      "ammendedIndicator": "% of households practicing intercropping or conservation agriculture",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": "Food production"
+    },
+    {
+      "id": 60,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Improved management of excessive water in farms",
+      "ammendedIndicator": "% of households that received training on water conservation techniques",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": "Food production"
+    },
+    {
+      "id": 61,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Promoting sustainable land and water management practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 62,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Enhanced water conservation and irrigation efficiency",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 63,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Promoting sustainable land and water management practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 64,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Capacity building for farmers",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 65,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Increased training and Capacity building to improve knowledge on best farming practices",
+      "ammendedIndicator": "% of households that received demonstration or field-based training from extension officers or NGOs",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": "Food production"
+    },
+    {
+      "id": 66,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Facilitating training and capacity-building programs",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 67,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Civic education for the best farming practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 68,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Facilitating training and capacity-building programs",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 69,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Enhanced civic education",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 70,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Capacity building for farmers",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 71,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Regular training on climate adaptations for all farmers",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 72,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Access to demonstration farms for practical learning",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 73,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Financial support and subsidies on fertilizers",
+      "ammendedIndicator": "% of households that received fertilizer or farm input subsidies from government or partners",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": "Food production"
+    },
+    {
+      "id": 74,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Increased training and Capacity building to improve knowledge on best farming practices",
+      "ammendedIndicator": "% of households reporting improved farm practices as a result of extension services",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": "Food production"
+    },
+    {
+      "id": 75,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Facilitating training and capacity-building programs",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 76,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Presence of healthy soils that need no fertilizer inputs, hence low costs",
+      "ammendedIndicator": "% reduction in synthetic fertilizer use",
+      "possibleMeasurementUnit": "% reduction",
+      "targetRelevance": "Food production"
+    },
+    {
+      "id": 77,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Reduced dependency on external inputs (e.g., fertilizers, pesticides)",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 78,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Reduced fertilizer prices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 79,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "More Cow dung and organic forms of farming materials",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 80,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Reduced fertilizer prices",
+      "ammendedIndicator": "Food price stability index",
+      "possibleMeasurementUnit": "Price volatility coefficient",
+      "targetRelevance": "Food access"
+    },
+    {
+      "id": 81,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Reduced food prices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 82,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Improved quality products from my farmlands",
+      "ammendedIndicator": "% increase in livestock productivity (milk/meat yield)",
+      "possibleMeasurementUnit": "KG/L of milk/meat yield",
+      "targetRelevance": "Food production"
+    },
+    {
+      "id": 83,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Increased information access on best season to plant certain specific sustainable crops",
+      "ammendedIndicator": "% of households with access to seasonal or agro-climatic information",
+      "possibleMeasurementUnit": "% of households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 84,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Access to climate and weather information systems and soil lab to conduct tests on soils",
+      "ammendedIndicator": "% of households accessing climate information services and soil testing facilities",
+      "possibleMeasurementUnit": "% of households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 85,
+      "thematicSector": "Agriculture & Food Security",
+      "rawIndicator": "Integrate new technology",
+      "ammendedIndicator": "% of farmers using new technologies for adaptation (e.g., irrigation systems, digital weather apps)",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 86,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Reduced vulnerability and enhanced adaptive capacities",
+      "ammendedIndicator": "% of households reporting increased income from climate-resilient livelihoods",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 87,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Increased farmer income and livelihood security",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 88,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Access to funds through sub-county budget allocations",
+      "ammendedIndicator": "% of households with access to credit, grants, or subsidies for adaptation",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 89,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Providing grants or subsidies for climate-smart farming practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 90,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Encouraging public-private partnerships for resilience",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 91,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Financial resources or access to credit for adaptation investments",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 92,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Providing grants or subsidies for climate-smart farming practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 93,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Increased access to donor funds and government funds for farmers",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 94,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Access to climate finance",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 95,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Providing credit and subsidies to PWD farmers",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 96,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Enjoining all registered farmers to climate-smart funds",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 97,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Adequate/enough capital for agricultural adaptation",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 98,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Financial support",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 99,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Teaching about access to credit for adaptation investments as farmers",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 100,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "% of community representatives trained in interpreting and sharing climate data",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 101,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Training and provision of grants and subsidies to support youth engagement in local adaptation efforts",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 102,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Formalizing women's solidarity markets",
+      "ammendedIndicator": "% women controlling adaptation resources/Women's economic empowerment index",
+      "possibleMeasurementUnit": "% women",
+      "targetRelevance": ""
+    },
+    {
+      "id": 103,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "More women included in local climate adaptation leadership",
+      "ammendedIndicator": "% of women and youth in climate adaptation leadership or livelihood groups",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 104,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Formalizing women's solidarity markets",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 105,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Supporting community-led adaptation initiatives",
+      "ammendedIndicator": "% of households involved in local cooperatives or self-help groups supporting adaptation",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 106,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Participation in community groups or cooperatives",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 107,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Access to climate finance",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 108,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Initiating local youth-led climate change champion groups",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 109,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Access to funds through sub-county budget allocations",
+      "ammendedIndicator": "% of households benefiting from county or donor-funded livelihood projects",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 110,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Providing grants or subsidies for climate-smart farming practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 111,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Encouraging public-private partnerships for resilience",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 112,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Following up on donor and government projects in climate adaptation at local levels to ensure transparency and inclusivity in benefit sharing",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 113,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Support from local government or NGOs for adaptation initiatives.",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 114,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Providing grants or subsidies for climate-smart farming practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 115,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Encouraging public-private partnerships for resilience projects",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 116,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Increased accountability among government and local leadership in climate action funding",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 117,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Increased access to donor funds and government funds for farmers",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 118,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Financial support",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 119,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Alternative farming practices such as beekeeping and planting of bananas",
+      "ammendedIndicator": "% of households with diversified income sources (farming, trade, livestock, fishing, etc.)",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 120,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Provision of refrigerators for fish farmers",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 121,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Diversification of livelihoods",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 122,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Increased farmer income and livelihood security",
+      "ammendedIndicator": "Average annual income change attributed to adaptation interventions",
+      "possibleMeasurementUnit": "KES / household / year",
+      "targetRelevance": ""
+    },
+    {
+      "id": 123,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Presence of customers for fish during the rainy and dry seasons",
+      "ammendedIndicator": "% of households reporting improved market access for farm produce",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 124,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Provision of refrigerators for fish farmers",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 125,
+      "thematicSector": "Poverty & Livelihood",
+      "rawIndicator": "Facilitating training and capacity-building programs",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 126,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Access to traditional knowledge and indigenous practices",
+      "ammendedIndicator": "% of households applying indigenous knowledge in climate adaptation practices",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 127,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Integrating Indigenous knowledge sharing among women",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 128,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Community nominee's to represent the local community to engage stakeholders",
+      "ammendedIndicator": "% of women, youth, and PWDs participating in adaptation decision-making",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 129,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Increased awareness and sensitization programs on climate change and support for the elderly and widows",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 130,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Active participation of all groups, the youth, women, men, and marginalised groups",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 131,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Well-represented of all groups in the society in projects or meetings on climate adaptation",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 132,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Increased and active engagement of youths and women in climate adaptation efforts through support of the youth and women groups",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 133,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Improved support and outreach to the elderly, youths, and widows at the local level on climate adaptation interventions.",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 134,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Initiating local youth-led climate change champion groups",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 135,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Forming farming youth groups for a resilient environment",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 136,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Gender-specific seminar and workshop programs",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 137,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Inclusive of all stakeholders in decision making",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 138,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Enhanced policy and regulatory frameworks on climate change",
+      "ammendedIndicator": "% community members in participating in climate adaptation planning processes",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 139,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "More women included in local climate adaptation leadership",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 140,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Community nominee's to represent the local community to engage stakeholders",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 141,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Strengthening local governance and policy",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 142,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Stronger community-based adaptation practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 143,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Support from local government or NGOs for adaptation initiatives.",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 144,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Strengthening local governance and policy implementation",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 145,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Supporting community-led adaptation initiatives",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 146,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Increased accountability among government and local leadership in climate action funding",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 147,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Active participation of all groups, the youth, women, men, and marginalised groups",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 148,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Well-represented of all groups in the society in projects or meetings on climate adaptation",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 149,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Increased and active engagement of youths and women in climate adaptation efforts through support of the youth and women groups",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 150,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Participating in planning on adaptation measures",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 151,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Enhanced policy and regulatory frameworks on climate change",
+      "ammendedIndicator": "Existence of intergenerational knowledge-sharing programs (elders-youth learning)",
+      "possibleMeasurementUnit": "Binary (Yes/No)",
+      "targetRelevance": ""
+    },
+    {
+      "id": 152,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Strengthening local governance and policy",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 153,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Access to traditional knowledge and indigenous practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 154,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Strengthening local governance and policy implementation",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 155,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Integrating Indigenous knowledge sharing among women",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 156,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Forming farming youth groups for a resilient environment",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 157,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Brainstorming with my fellow peers",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 158,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Strong social networks and collaboration within the community",
+      "ammendedIndicator": "% of households reporting strengthened community networks for mutual support",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 159,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Improved security",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 160,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Supporting community-led adaptation initiatives",
+      "ammendedIndicator": "% of households participating in local barazas or meetings on adaptation",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 161,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Following up on donor and government projects in climate adaptation at local levels to ensure transparency and inclusivity in benefit sharing",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 162,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Strong social networks and collaboration within the community",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 163,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Stronger community-based adaptation practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 164,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Training on climate adaptation, especially to women",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 165,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Forming farming youth groups for a resilient environment",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 166,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Integrating Indigenous knowledge sharing among women",
+      "ammendedIndicator": "Number of community initiatives integrating traditional and scientific knowledge",
+      "possibleMeasurementUnit": "Count",
+      "targetRelevance": ""
+    },
+    {
+      "id": 167,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Training on local challenges faced by the community will enable me to give effective recommendations on adaptation strategies",
+      "ammendedIndicator": "% of community members trained on local adaptation issues and solution design",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 168,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Education based research",
+      "ammendedIndicator": "Existence of research and learning initiatives on local climate adaptation",
+      "possibleMeasurementUnit": "Binary(Yes/No)",
+      "targetRelevance": ""
+    },
+    {
+      "id": 169,
+      "thematicSector": "Cultural Heritage & Social Inclusion",
+      "rawIndicator": "Training in proposal writing and project planning",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 170,
+      "thematicSector": "Health",
+      "rawIndicator": "Improved well-being",
+      "ammendedIndicator": "% of households with access to healthcare services during climate hazards (floods, droughts)",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 171,
+      "thematicSector": "Health",
+      "rawIndicator": "Increased access to health information services during flooding",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 172,
+      "thematicSector": "Health",
+      "rawIndicator": "Provision of good health services and good education for children",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 173,
+      "thematicSector": "Health",
+      "rawIndicator": "Improved human health",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 174,
+      "thematicSector": "Health",
+      "rawIndicator": "Increased sensitization and awareness programs",
+      "ammendedIndicator": "Frequency of disease outbreaks linked to floods or poor sanitation",
+      "possibleMeasurementUnit": "No. of cases / year",
+      "targetRelevance": ""
+    },
+    {
+      "id": 175,
+      "thematicSector": "Health",
+      "rawIndicator": "Increased access to health information services during flooding",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 176,
+      "thematicSector": "Health",
+      "rawIndicator": "Improved human health",
+      "ammendedIndicator": "% of households reporting improved nutrition due to food security interventions",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 177,
+      "thematicSector": "Health",
+      "rawIndicator": "Improved community health",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 178,
+      "thematicSector": "Health",
+      "rawIndicator": "Increased sensitization and awareness programs",
+      "ammendedIndicator": "% of households benefiting from health awareness and climate-health sensitization programs",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 179,
+      "thematicSector": "Health",
+      "rawIndicator": "Increased awareness and sensitization programs on climate change and support for the elderly and widows",
+      "ammendedIndicator": ".",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 180,
+      "thematicSector": "Health",
+      "rawIndicator": "Provision of good health services and good education for children",
+      "ammendedIndicator": ".",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 181,
+      "thematicSector": "Health",
+      "rawIndicator": "Increased awareness of climate adaptation in the locality",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 182,
+      "thematicSector": "Health",
+      "rawIndicator": "Education on sustainable practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 183,
+      "thematicSector": "Health",
+      "rawIndicator": "Communities awareness",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 184,
+      "thematicSector": "Health",
+      "rawIndicator": "Improved well-being",
+      "ammendedIndicator": "% of households reporting improved mental well-being and reduced climate-related stress",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 185,
+      "thematicSector": "Health",
+      "rawIndicator": "Improved human health",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 186,
+      "thematicSector": "Health",
+      "rawIndicator": "Reduced displacement by flooding events",
+      "ammendedIndicator": "% decrease in climate-induced displacement",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 187,
+      "thematicSector": "Health",
+      "rawIndicator": "Reduced extreme weather impacts",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 188,
+      "thematicSector": "Health",
+      "rawIndicator": "Disaster management and preparedness",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 189,
+      "thematicSector": "Infrastructure & Human Settlements",
+      "rawIndicator": "Enhancing access to climate information and early warning systems",
+      "ammendedIndicator": "% households receiving timely alerts",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 190,
+      "thematicSector": "Infrastructure & Human Settlements",
+      "rawIndicator": "Enhancing access to climate information and early warning systems",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 191,
+      "thematicSector": "Infrastructure & Human Settlements",
+      "rawIndicator": "Disaster management and preparedness",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 192,
+      "thematicSector": "Infrastructure & Human Settlements",
+      "rawIndicator": "Early warning systems",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 193,
+      "thematicSector": "Infrastructure & Human Settlements",
+      "rawIndicator": "Number of gabbions & dykes constructed by the county government or built by other stakeholders",
+      "ammendedIndicator": "% of households protected from flooding or erosion by gabions, dykes, or embankments",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 194,
+      "thematicSector": "Infrastructure & Human Settlements",
+      "rawIndicator": "Disaster management and preparedness",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 195,
+      "thematicSector": "Infrastructure & Human Settlements",
+      "rawIndicator": "Proper drainage system",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 196,
+      "thematicSector": "Infrastructure & Human Settlements",
+      "rawIndicator": "Number of gabbions & dykes constructed by the county government or built by other stakeholders",
+      "ammendedIndicator": "Number of community roads, bridges, or drainage systems improved or maintained",
+      "possibleMeasurementUnit": "Count",
+      "targetRelevance": ""
+    },
+    {
+      "id": 197,
+      "thematicSector": "Infrastructure & Human Settlements",
+      "rawIndicator": "Proper drainage system",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 198,
+      "thematicSector": "Infrastructure & Human Settlements",
+      "rawIndicator": "Reduced displacement by flooding events",
+      "ammendedIndicator": "% of households experiencing reduced property damage or displacement during extreme events",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 199,
+      "thematicSector": "Infrastructure & Human Settlements",
+      "rawIndicator": "Reduced displacement",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 200,
+      "thematicSector": "Infrastructure & Human Settlements",
+      "rawIndicator": "Reduced extreme weather impacts",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 201,
+      "thematicSector": "Infrastructure & Human Settlements",
+      "rawIndicator": "Reduced property destruction",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 202,
+      "thematicSector": "Infrastructure & Human Settlements",
+      "rawIndicator": "Reduced destruction to infrastructure, like roads",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 203,
+      "thematicSector": "Infrastructure & Human Settlements",
+      "rawIndicator": "Reduced destruction to infrastructure, like roads",
+      "ammendedIndicator": "% roads functional post-extreme events",
+      "possibleMeasurementUnit": "% roads",
+      "targetRelevance": ""
+    },
+    {
+      "id": 204,
+      "thematicSector": "Infrastructure & Human Settlements",
+      "rawIndicator": "Enhancing access to climate information and early warning systems",
+      "ammendedIndicator": "% of households connected to early warning systems (SMS, radio, baraza alerts)",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 205,
+      "thematicSector": "Infrastructure & Human Settlements",
+      "rawIndicator": "Early warning systems",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 206,
+      "thematicSector": "Infrastructure & Human Settlements",
+      "rawIndicator": "Enhancing access to climate information and early warning systems",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 207,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Promoted ecosystem-based adaptation",
+      "ammendedIndicator": "% of households participating in tree planting or reforestation programs",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 208,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Encouraged conservation of water catchment areas",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 209,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Forming farming youth groups for a resilient environment",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 210,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Forming community women's green groups.",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 211,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Number of trees planted in the basins informed by soil sampling",
+      "ammendedIndicator": "% increase in vegetation cover or tree survival rate within communities",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 212,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Greater biodiversity and ecosystem services support",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 213,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Greening of the environment despite a change in weather e.g, during drought",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 214,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Having enough pasture for the animals",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 215,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Planting of grass (fodder) by farmers Alternative farming practices such as beekeeping and planting of bananas",
+      "ammendedIndicator": "% of households engaged in soil fertility improvement or reduced erosion activities",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 216,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Reduced soil erosion",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 217,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Soil fertility improvement",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 218,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Preservation of natural resources, e.g. rivers and streams",
+      "ammendedIndicator": "% of households reporting improved biodiversity or natural resource availability",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 219,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Greater biodiversity and ecosystem services support",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 220,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Wetland reclamation projects",
+      "ammendedIndicator": "% of households involved in sustainable wetland or forest restoration projects",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 221,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Reduced soil erosion and installed proper drainage systems",
+      "ammendedIndicator": "% of households reporting reduced land degradation and improved soil health",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 222,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Reduced land degradation practices, such as excessive quarrying",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 223,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Number of trees planted in the basins informed by soil sampling",
+      "ammendedIndicator": "Number of community nurseries established for seedling production",
+      "possibleMeasurementUnit": "Count",
+      "targetRelevance": ""
+    },
+    {
+      "id": 224,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Promoted ecosystem-based adaptation",
+      "ammendedIndicator": "% reduction in degraded land resulting from soil erosion control effectiveness",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 225,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Reduced soil erosion and installed proper drainage systems",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 226,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Reduced soil erosion",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 227,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Reduced land degradation practices, such as excessive quarrying",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 228,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Promoted ecosystem-based adaptation",
+      "ammendedIndicator": "% households using conservation practices/sustainable land management practices",
+      "possibleMeasurementUnit": "% households",
+      "targetRelevance": ""
+    },
+    {
+      "id": 229,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Promoting sustainable land and water management practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 230,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Availability of land and natural resources for climate-smart practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 231,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Technical skills and experience in sustainable farming or conservation",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 232,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Promoting sustainable land and water management practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 233,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Greening of the environment despite a change in weather e.g, during drought",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 234,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Proper soil management practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 235,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Nature-based solutions",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 236,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Education on sustainable practices",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 237,
+      "thematicSector": "Ecosystem & Biodiversity",
+      "rawIndicator": "Promoted sustainable adaptation",
+      "ammendedIndicator": "",
+      "possibleMeasurementUnit": "",
+      "targetRelevance": ""
+    },
+    {
+      "id": 238,
+      "thematicSector": "Governance and Policy",
+      "rawIndicator": "Promoting ethical leadership",
+      "ammendedIndicator": "Increased accountability among local leadership in climate action funding",
+      "possibleMeasurementUnit": "% leadership involved",
+      "targetRelevance": ""
+    },
+    {
+      "id": 239,
+      "thematicSector": "Governance and Policy",
+      "rawIndicator": "Forming a schedule for mentorship programs regarding climate change adaptations",
+      "ammendedIndicator": "Existence of mentorship and capacity-building programs for local adaptation",
+      "possibleMeasurementUnit": "Binary (Yes/No)",
+      "targetRelevance": ""
+    },
+    {
+      "id": 240,
+      "thematicSector": "Governance and Policy",
+      "rawIndicator": "Climate data interpretation and dissemination skills",
+      "ammendedIndicator": "% of community representatives trained in interpreting and sharing climate data",
+      "possibleMeasurementUnit": "% of participants",
+      "targetRelevance": ""
+    }
+  ]
+}
