@@ -269,10 +269,10 @@ export default function LAMAIndicatorViewer() {
                                                     <span className="text-gray-600">Total Indicators:</span>
                                                     <span className={`font-bold ${colors.text}`}>{stats.total}</span>
                                                 </div>
-                                                <div className="flex items-center justify-between text-xs sm:text-sm">
+                                                {/* <div className="flex items-center justify-between text-xs sm:text-sm">
                                                     <span className="text-gray-600">Completed:</span>
                                                     <span className="font-bold text-green-600">{stats.completeness}%</span>
-                                                </div>
+                                                </div> */}
                                                 <div className={`flex items-center gap-2 text-xs font-semibold ${colors.text} pt-2 border-t ${colors.border}`}>
                                                     <span>Click to explore</span>
                                                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -339,7 +339,7 @@ export default function LAMAIndicatorViewer() {
 
                                             <div className="relative">
                                                 {/* Status Badge */}
-                                                <div className="flex items-center justify-between mb-3">
+                                                {/* <div className="flex items-center justify-between mb-3">
                                                     {item.hasAmended ? (
                                                         <span className="flex items-center gap-1 px-2 py-1 bg-green-100 text-green-700 rounded-lg text-xs font-bold">
                                                             <CheckCircle2 className="w-3 h-3" />
@@ -352,7 +352,7 @@ export default function LAMAIndicatorViewer() {
                                                         </span>
                                                     )}
                                                     <ChevronRight className={`w-5 h-5 ${colors.text} opacity-0 group-hover:opacity-100 transition-opacity`} />
-                                                </div>
+                                                </div> */}
 
                                                 {/* Indicator Text */}
                                                 <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-3 line-clamp-3 min-h-[3.5rem] group-hover:text-emerald-600 transition-colors">
