@@ -30,7 +30,7 @@ const LamaNavbar = () => {
 
   const getActiveTab = () => {
     if (pathname === "/") return "Home";
-    if (pathname.startsWith("/about")) return "About";
+    if (pathname.startsWith("/AboutPage")) return "About";
     if (pathname.startsWith("/dashboard")) return "Dashboard";
     if (pathname.startsWith("/resources")) return "Resources";
     if (pathname.startsWith("/stakeholders")) return "Stakeholders";
@@ -49,7 +49,7 @@ const LamaNavbar = () => {
     {
       name: "About",
       icon: <Info className="w-4 h-4" />,
-      href: "/about",
+      href: "/AboutPage",
     },
     {
       name: "Program",
@@ -294,7 +294,7 @@ const LamaNavbar = () => {
                                                   </div>
                                                 )}
                                               </Link>
-                                            )
+                                            ),
                                           )}
                                         </div>
                                       </div>
