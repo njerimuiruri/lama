@@ -7,7 +7,7 @@ import {
 import LamaNavbar from '@/components/Navbar/navbar';
 import LamaFooter from '@/components/Footer/footer';
 
-const about = () => {
+const AboutPage = () => {
     const [currentAdvisor, setCurrentAdvisor] = useState(0);
 
     const advisors = [
@@ -450,4 +450,4 @@ const about = () => {
     );
 };
 
-export default about;
+export default AboutPage;
